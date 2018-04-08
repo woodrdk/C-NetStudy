@@ -39,16 +39,59 @@ namespace WindowsFormsApp1
 
             // calculation
             double total = subTNum * (1 + taxrate);
-            //MessageBox.Show(total.ToString());
+            decimal finTotal = Math.Round(System.Convert.ToDecimal(total),2); 
 
             // sends the results to the text box for total
-            txtTotal.Text = total.ToString();
+            txtTotal.Text = "$"+ decimal.Round(finTotal,2).ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // do notes and  c # code here for objects sometimes 
             // example making read only txtTotal.ReadOnly = true;
+            
+        }
+
+        private void txtSubtotal_TextChanged(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInstructions_Click(object sender, EventArgs e)
+        {
+            if(lblInsCalc.Visible == false)
+            {
+                lblInsCalc.Visible = true;
+                lblInstSub.Visible = true;
+                lblInstTax.Visible = true;
+                btnCloseInstructions.Visible = true;
+            }
+        }
+
+        private void btnCloseInstructions_Click(object sender, EventArgs e)
+        {
+            if (lblInsCalc.Visible == true)
+            {
+                lblInsCalc.Visible = false;
+                lblInstSub.Visible = false;
+                lblInstTax.Visible = false;
+                btnCloseInstructions.Visible = false;
+            }
         }
     }
 }
