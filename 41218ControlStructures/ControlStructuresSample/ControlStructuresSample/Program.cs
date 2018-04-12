@@ -10,6 +10,40 @@ namespace ControlStructuresSample
     {
         static void Main(string[] args)
         {
+            //ranges in switch require c# 7 aka VS2017+
+            int num = 10;
+            switch (num)
+            {
+                case int n when (n >= 10):
+                    //some code
+                    Console.WriteLine("yep");
+                    break;
+                case int n when (n < 10):
+                    //some code
+                    Console.WriteLine("nope");
+                    break;
+
+            }
+
+
+
+            //case - fall-through
+            char grade = 'A';
+            switch (grade)
+            {
+                case 'A':
+                case 'B':
+                    Console.WriteLine("Good Job");
+                    break;
+                case 'C':
+                    Console.WriteLine("On right track");
+                    break;
+                default:
+                    Console.WriteLine("I don't know how to handle that");
+                    break;
+
+            }
+
             DateTime currentDate = DateTime.Today;
             DayOfWeek dow = currentDate.DayOfWeek;
             // next line is single line version of previous 2 lines
