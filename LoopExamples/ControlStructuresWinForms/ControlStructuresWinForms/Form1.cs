@@ -17,11 +17,6 @@ namespace ControlStructuresWinForms
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmMainForm_Load(object sender, EventArgs e)
         {
 
@@ -36,9 +31,18 @@ namespace ControlStructuresWinForms
             MessageBox.Show(sum.ToString());
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void frmMainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            DialogResult choice = MessageBox.Show("Are you sure you want to quit? ", "Do you want to quit? ", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(choice == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                MessageBox.Show("You should purchase this software");
+            }
         }
     }
 }
