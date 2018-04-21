@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
 
         private void btnExitFancy_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            ExitApplication();
         }
 
         private void btnBackfancy_Click(object sender, EventArgs e)
@@ -125,6 +125,15 @@ namespace WindowsFormsApp1
 
             }
         }
+        private void ExitApplication()
+        {
+            DialogResult result = MessageBox.Show("Are you sure? ", "Quit?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
@@ -200,6 +209,48 @@ namespace WindowsFormsApp1
             if (cbFeet.Checked == true)
             {
                 cbInches.Checked = false;
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExitApplication();
+        }
+
+        private void metersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(sender == metersToolStripMenuItem)
+            {
+                cbMetric.Checked = true; 
+                cbMeters.Checked = true;
+            }
+
+        }
+
+        private void centimetersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sender == centimetersToolStripMenuItem)
+            {
+                cbMetric.Checked = true;
+                cbCentimeters.Checked = true;
+            }
+        }
+
+        private void feetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sender == feetToolStripMenuItem)
+            {
+                cbStandard.Checked = true;
+                cbFeet.Checked = true;
+            }
+        }
+
+        private void inchesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sender == inchesToolStripMenuItem)
+            {
+                cbStandard.Checked = true;
+                cbInches.Checked = true;
             }
         }
     }

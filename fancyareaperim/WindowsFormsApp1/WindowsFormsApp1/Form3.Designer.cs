@@ -55,6 +55,17 @@
             this.cbInches = new System.Windows.Forms.CheckBox();
             this.cbMeters = new System.Windows.Forms.CheckBox();
             this.cbCentimeters = new System.Windows.Forms.CheckBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.incrementOfMeasureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.centimetersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBackfancy
@@ -184,7 +195,7 @@
             // cbMetric
             // 
             this.cbMetric.AutoSize = true;
-            this.cbMetric.Location = new System.Drawing.Point(53, 25);
+            this.cbMetric.Location = new System.Drawing.Point(298, 109);
             this.cbMetric.Name = "cbMetric";
             this.cbMetric.Size = new System.Drawing.Size(55, 17);
             this.cbMetric.TabIndex = 25;
@@ -195,7 +206,7 @@
             // cbStandard
             // 
             this.cbStandard.AutoSize = true;
-            this.cbStandard.Location = new System.Drawing.Point(171, 25);
+            this.cbStandard.Location = new System.Drawing.Point(416, 109);
             this.cbStandard.Name = "cbStandard";
             this.cbStandard.Size = new System.Drawing.Size(69, 17);
             this.cbStandard.TabIndex = 26;
@@ -216,7 +227,7 @@
             // lblDimensionChoice
             // 
             this.lblDimensionChoice.AutoSize = true;
-            this.lblDimensionChoice.Location = new System.Drawing.Point(50, 9);
+            this.lblDimensionChoice.Location = new System.Drawing.Point(295, 93);
             this.lblDimensionChoice.Name = "lblDimensionChoice";
             this.lblDimensionChoice.Size = new System.Drawing.Size(190, 13);
             this.lblDimensionChoice.TabIndex = 28;
@@ -267,7 +278,7 @@
             // cbFeet
             // 
             this.cbFeet.AutoSize = true;
-            this.cbFeet.Location = new System.Drawing.Point(171, 48);
+            this.cbFeet.Location = new System.Drawing.Point(416, 132);
             this.cbFeet.Name = "cbFeet";
             this.cbFeet.Size = new System.Drawing.Size(47, 17);
             this.cbFeet.TabIndex = 34;
@@ -279,7 +290,7 @@
             // cbInches
             // 
             this.cbInches.AutoSize = true;
-            this.cbInches.Location = new System.Drawing.Point(236, 48);
+            this.cbInches.Location = new System.Drawing.Point(481, 132);
             this.cbInches.Name = "cbInches";
             this.cbInches.Size = new System.Drawing.Size(58, 17);
             this.cbInches.TabIndex = 35;
@@ -291,7 +302,7 @@
             // cbMeters
             // 
             this.cbMeters.AutoSize = true;
-            this.cbMeters.Location = new System.Drawing.Point(6, 48);
+            this.cbMeters.Location = new System.Drawing.Point(251, 132);
             this.cbMeters.Name = "cbMeters";
             this.cbMeters.Size = new System.Drawing.Size(58, 17);
             this.cbMeters.TabIndex = 36;
@@ -303,7 +314,7 @@
             // cbCentimeters
             // 
             this.cbCentimeters.AutoSize = true;
-            this.cbCentimeters.Location = new System.Drawing.Point(70, 48);
+            this.cbCentimeters.Location = new System.Drawing.Point(315, 132);
             this.cbCentimeters.Name = "cbCentimeters";
             this.cbCentimeters.Size = new System.Drawing.Size(81, 17);
             this.cbCentimeters.TabIndex = 37;
@@ -311,6 +322,87 @@
             this.cbCentimeters.UseVisualStyleBackColor = true;
             this.cbCentimeters.Visible = false;
             this.cbCentimeters.CheckedChanged += new System.EventHandler(this.cbCentimeters_CheckedChanged);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.incrementOfMeasureToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 38;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // incrementOfMeasureToolStripMenuItem
+            // 
+            this.incrementOfMeasureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.metricToolStripMenuItem,
+            this.standardToolStripMenuItem});
+            this.incrementOfMeasureToolStripMenuItem.Name = "incrementOfMeasureToolStripMenuItem";
+            this.incrementOfMeasureToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
+            this.incrementOfMeasureToolStripMenuItem.Text = "Increment Of Measure";
+            // 
+            // metricToolStripMenuItem
+            // 
+            this.metricToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.metersToolStripMenuItem,
+            this.centimetersToolStripMenuItem});
+            this.metricToolStripMenuItem.Name = "metricToolStripMenuItem";
+            this.metricToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.metricToolStripMenuItem.Text = "Metric";
+            // 
+            // standardToolStripMenuItem
+            // 
+            this.standardToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.feetToolStripMenuItem,
+            this.inchesToolStripMenuItem});
+            this.standardToolStripMenuItem.Name = "standardToolStripMenuItem";
+            this.standardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.standardToolStripMenuItem.Text = "Standard";
+            // 
+            // metersToolStripMenuItem
+            // 
+            this.metersToolStripMenuItem.Name = "metersToolStripMenuItem";
+            this.metersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.metersToolStripMenuItem.Text = "Meters";
+            this.metersToolStripMenuItem.Click += new System.EventHandler(this.metersToolStripMenuItem_Click);
+            // 
+            // centimetersToolStripMenuItem
+            // 
+            this.centimetersToolStripMenuItem.Name = "centimetersToolStripMenuItem";
+            this.centimetersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.centimetersToolStripMenuItem.Text = "Centimeters";
+            this.centimetersToolStripMenuItem.Click += new System.EventHandler(this.centimetersToolStripMenuItem_Click);
+            // 
+            // feetToolStripMenuItem
+            // 
+            this.feetToolStripMenuItem.Name = "feetToolStripMenuItem";
+            this.feetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.feetToolStripMenuItem.Text = "Feet";
+            this.feetToolStripMenuItem.Click += new System.EventHandler(this.feetToolStripMenuItem_Click);
+            // 
+            // inchesToolStripMenuItem
+            // 
+            this.inchesToolStripMenuItem.Name = "inchesToolStripMenuItem";
+            this.inchesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inchesToolStripMenuItem.Text = "Inches";
+            this.inchesToolStripMenuItem.Click += new System.EventHandler(this.inchesToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Form3
             // 
@@ -344,9 +436,13 @@
             this.Controls.Add(this.lblSide1);
             this.Controls.Add(this.btnBackfancy);
             this.Controls.Add(this.btnExitFancy);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form3";
             this.Text = "Fancy area and perimeter Calculator";
             this.Load += new System.EventHandler(this.Form3_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +477,15 @@
         private System.Windows.Forms.CheckBox cbInches;
         private System.Windows.Forms.CheckBox cbMeters;
         private System.Windows.Forms.CheckBox cbCentimeters;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem incrementOfMeasureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metricToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem metersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem centimetersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem standardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem feetToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inchesToolStripMenuItem;
     }
 }
