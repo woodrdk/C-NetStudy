@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Thanks for using this calculator");
+                MessageBox.Show("Thank you for using this calculator");
             }
         }
     }

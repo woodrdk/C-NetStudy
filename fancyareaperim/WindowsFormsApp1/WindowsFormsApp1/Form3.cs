@@ -127,12 +127,7 @@ namespace WindowsFormsApp1
         }
         private void ExitApplication()
         {
-            DialogResult result = MessageBox.Show("Are you sure? ", "Quit?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                Close();
-            }
+            Close();
         }
 
         private void cbInches_CheckedChanged(object sender, EventArgs e)
@@ -252,6 +247,17 @@ namespace WindowsFormsApp1
                 cbStandard.Checked = true;
                 cbInches.Checked = true;
             }
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult choice = MessageBox.Show("Are you sure you want to quit? ", "Do you want to quit? ",
+       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (choice == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+ 
         }
     }
 }

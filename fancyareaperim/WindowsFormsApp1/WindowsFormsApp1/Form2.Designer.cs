@@ -123,6 +123,10 @@
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(100, 20);
             this.txtWidth.TabIndex = 13;
+            this.txtWidth.TextChanged += new System.EventHandler(this.txtWidth_TextChanged);
+            this.txtWidth.DoubleClick += new System.EventHandler(this.txtWidth_DoubleClick);
+            this.txtWidth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtWidth_KeyDown);
+            this.txtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWidth_KeyPress);
             // 
             // txtLength
             // 
@@ -130,6 +134,10 @@
             this.txtLength.Name = "txtLength";
             this.txtLength.Size = new System.Drawing.Size(100, 20);
             this.txtLength.TabIndex = 12;
+            this.txtLength.TextChanged += new System.EventHandler(this.txtLength_TextChanged);
+            this.txtLength.DoubleClick += new System.EventHandler(this.txtLength_DoubleClick);
+            this.txtLength.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLength_KeyDown);
+            this.txtLength.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLength_KeyPress);
             // 
             // btnCalc
             // 
@@ -192,6 +200,7 @@
             this.Controls.Add(this.btnExitBasic);
             this.Name = "Form2";
             this.Text = "Basic Area and Perimeter Calculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -57,14 +57,14 @@
             this.cbCentimeters = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.incrementOfMeasureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metricToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.centimetersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.standardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inchesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -342,6 +342,13 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // incrementOfMeasureToolStripMenuItem
             // 
             this.incrementOfMeasureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -357,8 +364,22 @@
             this.metersToolStripMenuItem,
             this.centimetersToolStripMenuItem});
             this.metricToolStripMenuItem.Name = "metricToolStripMenuItem";
-            this.metricToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.metricToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.metricToolStripMenuItem.Text = "Metric";
+            // 
+            // metersToolStripMenuItem
+            // 
+            this.metersToolStripMenuItem.Name = "metersToolStripMenuItem";
+            this.metersToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.metersToolStripMenuItem.Text = "Meters";
+            this.metersToolStripMenuItem.Click += new System.EventHandler(this.metersToolStripMenuItem_Click);
+            // 
+            // centimetersToolStripMenuItem
+            // 
+            this.centimetersToolStripMenuItem.Name = "centimetersToolStripMenuItem";
+            this.centimetersToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.centimetersToolStripMenuItem.Text = "Centimeters";
+            this.centimetersToolStripMenuItem.Click += new System.EventHandler(this.centimetersToolStripMenuItem_Click);
             // 
             // standardToolStripMenuItem
             // 
@@ -366,43 +387,22 @@
             this.feetToolStripMenuItem,
             this.inchesToolStripMenuItem});
             this.standardToolStripMenuItem.Name = "standardToolStripMenuItem";
-            this.standardToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.standardToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.standardToolStripMenuItem.Text = "Standard";
-            // 
-            // metersToolStripMenuItem
-            // 
-            this.metersToolStripMenuItem.Name = "metersToolStripMenuItem";
-            this.metersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.metersToolStripMenuItem.Text = "Meters";
-            this.metersToolStripMenuItem.Click += new System.EventHandler(this.metersToolStripMenuItem_Click);
-            // 
-            // centimetersToolStripMenuItem
-            // 
-            this.centimetersToolStripMenuItem.Name = "centimetersToolStripMenuItem";
-            this.centimetersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.centimetersToolStripMenuItem.Text = "Centimeters";
-            this.centimetersToolStripMenuItem.Click += new System.EventHandler(this.centimetersToolStripMenuItem_Click);
             // 
             // feetToolStripMenuItem
             // 
             this.feetToolStripMenuItem.Name = "feetToolStripMenuItem";
-            this.feetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.feetToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.feetToolStripMenuItem.Text = "Feet";
             this.feetToolStripMenuItem.Click += new System.EventHandler(this.feetToolStripMenuItem_Click);
             // 
             // inchesToolStripMenuItem
             // 
             this.inchesToolStripMenuItem.Name = "inchesToolStripMenuItem";
-            this.inchesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inchesToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.inchesToolStripMenuItem.Text = "Inches";
             this.inchesToolStripMenuItem.Click += new System.EventHandler(this.inchesToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Form3
             // 
@@ -440,6 +440,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form3";
             this.Text = "Fancy area and perimeter Calculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form3_FormClosing);
             this.Load += new System.EventHandler(this.Form3_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
