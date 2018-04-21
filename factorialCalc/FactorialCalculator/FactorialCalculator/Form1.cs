@@ -80,5 +80,17 @@ namespace FactorialCalculator
         {
 
         }
+
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure? ", "Quit?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+
+        }
     }
 }
