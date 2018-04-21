@@ -38,7 +38,12 @@
             this.lblError2 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNumber
@@ -47,13 +52,13 @@
             this.lblNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumber.Location = new System.Drawing.Point(12, 26);
             this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(157, 24);
+            this.lblNumber.Size = new System.Drawing.Size(163, 24);
             this.lblNumber.TabIndex = 0;
-            this.lblNumber.Text = "Input a number:";
+            this.lblNumber.Text = "Input a number: ";
             // 
             // txtNumber
             // 
-            this.txtNumber.Location = new System.Drawing.Point(209, 26);
+            this.txtNumber.Location = new System.Drawing.Point(220, 26);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(64, 20);
             this.txtNumber.TabIndex = 1;
@@ -77,7 +82,7 @@
             this.txtFactorial.Location = new System.Drawing.Point(120, 69);
             this.txtFactorial.Name = "txtFactorial";
             this.txtFactorial.ReadOnly = true;
-            this.txtFactorial.Size = new System.Drawing.Size(153, 20);
+            this.txtFactorial.Size = new System.Drawing.Size(164, 20);
             this.txtFactorial.TabIndex = 3;
             // 
             // btnCalc
@@ -94,7 +99,7 @@
             // 
             this.btnExit.Location = new System.Drawing.Point(170, 133);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(103, 23);
+            this.btnExit.Size = new System.Drawing.Size(114, 23);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -130,11 +135,47 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // lblNum
+            // 
+            this.lblNum.AutoSize = true;
+            this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum.Location = new System.Drawing.Point(167, 32);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(47, 16);
+            this.lblNum.TabIndex = 9;
+            this.lblNum.Text = "(1-20)";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(474, 24);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 196);
+            this.Controls.Add(this.lblNum);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblError2);
@@ -144,11 +185,15 @@
             this.Controls.Add(this.lblFactorial);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.lblNumber);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Factorial Calculator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +210,10 @@
         private System.Windows.Forms.Label lblError2;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblNum;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
