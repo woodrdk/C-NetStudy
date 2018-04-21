@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        private void cbInches_CheckedChanged(object sender, EventArgs e)
         {
             if (cbInches.Checked == true)
             {

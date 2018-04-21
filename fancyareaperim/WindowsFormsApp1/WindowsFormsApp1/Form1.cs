@@ -52,5 +52,19 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult choice = MessageBox.Show("Are you sure you want to quit? ", "Do you want to quit? ",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (choice == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                MessageBox.Show("Thanks for using this calculator");
+            }
+        }
     }
 }

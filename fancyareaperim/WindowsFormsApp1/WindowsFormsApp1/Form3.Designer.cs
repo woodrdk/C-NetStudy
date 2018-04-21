@@ -297,7 +297,7 @@
             this.cbInches.Text = "Inches";
             this.cbInches.UseVisualStyleBackColor = true;
             this.cbInches.Visible = false;
-            this.cbInches.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
+            this.cbInches.CheckedChanged += new System.EventHandler(this.cbInches_CheckedChanged);
             // 
             // cbMeters
             // 
