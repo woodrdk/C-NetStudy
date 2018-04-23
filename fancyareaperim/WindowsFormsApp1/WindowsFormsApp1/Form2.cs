@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult choice = MessageBox.Show("Are you sure you want to quit? ", "Do you want to quit? ",
-       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (choice == DialogResult.No)
             {
                 e.Cancel = true;
@@ -140,7 +140,9 @@ namespace WindowsFormsApp1
 
         private void txtWidth_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar);
+            // was going to use but wont allow decimals ... 
+            // will need to research how to do both this way
+            // if possible  e.Handled = !char.IsDigit(e.KeyChar);
         }
     }
 }
