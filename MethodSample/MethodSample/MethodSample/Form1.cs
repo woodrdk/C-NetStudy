@@ -133,5 +133,50 @@ namespace MethodSample
             }
             return false;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            GetFutureValue(500);
+            GetFutureValue(500, .1);
+            GetFutureValue(500, numberOfMonths: 24);
+            GetFutureValue(numberOfMonths: 20, monthlyInvestment: 500, monthlyInterestRate: .1);
+        }
+        private double GetFutureValue(double monthlyInvestment, double monthlyInterestRate = 0.05, int numberOfMonths = 12)
+        {
+            double futureValue = 0;
+            for (int i = 0; i < numberOfMonths; i++)
+            {
+                futureValue = (futureValue + monthlyInvestment) * (1 + monthlyInterestRate);
+            }
+            return futureValue;
+        }
+
+
+        // create future value by copying code ... not best way to do it but it works1
+        /* 
+        private double GetFutureValue(double monthlyInvestment)
+        {
+            double futureValue = 0;
+            const int NumOfMonths = 12;
+            const double InterestRate = .05;
+            for (int i = 0; i < NumOfMonths; i++)
+            {
+                futureValue = (futureValue + monthlyInvestment) * (1 + InterestRate);
+            }
+            return futureValue;
+        }
+        */
+        // method chaining 
+        /*private double GetFutureValue(double monthlyInvestment)
+        {
+            const double DefaultInterestRate = 0.05;
+            const int DefaultNumMOnths = 12;
+            double result = GetFutureValue(monthlyInvestment, DefaultInterestRate, DefaultNumMOnths);
+            return result;
+
+            // or do this
+            //      return GetFutureValue(monthlyInvestment, DefaultInterestRate, DefaultNumMOnths);
+        }*/
+
     }
 }

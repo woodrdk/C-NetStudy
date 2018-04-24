@@ -176,20 +176,38 @@ namespace LoopExamples
             // Repeatedly ask the user for a number until they want to quit. 
             // (q to quit, entering a 0, or a different value to stop)
             //
-                        Console.WriteLine();
+
+            Console.WriteLine();
             Console.WriteLine("Exercise 4B");
             Console.WriteLine();
-            Console.WriteLine("Enter an integer");
-            string input = Console.ReadLine();
-            int numberInput = Int32.Parse(input);
-            if (numberInput < 10)
+            int tally = 0;
+            int userTotal = 0;
+            string repeat = "y";
+            while (repeat.Equals("y"))
             {
-                Console.WriteLine("This number is too small");
+                tally++;
+                Console.WriteLine("Enter an integer");
+                string userInput = Console.ReadLine();
+                int intInput = Int32.Parse(userInput);
+                if (intInput < 10)
+                {
+                    Console.WriteLine("This number is too small");
+                }
+                else
+                {
+                    Console.WriteLine("This number is big enough");
+                }
+                Console.WriteLine("Do you want to continue? (y/n) ");
+                repeat = Console.ReadLine();
+                userTotal += intInput;
             }
-            else
-            {
-                Console.WriteLine("This number is big enough");
-            }
+            Console.WriteLine("You added " + tally + " numbers together");
+            Console.WriteLine("The total is " + userTotal);
+            Console.WriteLine("The average is " + userTotal / tally);
+            Console.ReadKey();
+
+
+
             //
             //Exercise 5: Create a menu program that allows a user to choose an option.
             // You get to decide on the options and output.After a choice is made, display 
@@ -207,6 +225,43 @@ namespace LoopExamples
             //Display output for choice. Ex. CPW 150 = Principles of Relational Database
 
             //Redisplay menu and prompt again for choice.
+            Console.WriteLine();
+            Console.WriteLine("Exercise 5");
+            
+
+            string repeatClasses = "y";
+            while (repeatClasses.Equals("y"))
+            {
+                Console.WriteLine();
+                Console.WriteLine("Select a course to see the title: ");
+                Console.WriteLine("A. CPW 150");
+                Console.WriteLine("B. CPW 116");
+                Console.WriteLine("C. CPW 212");
+                Console.WriteLine("D. CPW 210");
+                Console.WriteLine("Enter your choice: ");
+                Console.WriteLine();
+                string selection = Console.ReadLine();
+                switch (selection)
+                {
+                    case "a":
+                        Console.WriteLine("CPW 150 = Principles of Relational Database");
+                        break;
+                    case "b":
+                        Console.WriteLine("CPW 116 = .NET PROGRAMMING");
+                        break;
+                    case "c":
+                        Console.WriteLine("CPW 212 = ADVANCED .NET PROGRAMMING");
+                        break;
+                    case "d":
+                        Console.WriteLine("CPW 210 = ADVANCED DATABASE PROGRAMMING");
+                        break;
+                }
+                Console.WriteLine();
+                Console.WriteLine("Want to look again? (y/n)");
+                repeatClasses = Console.ReadLine();
+            }
+                                
+            Console.ReadKey();
         }
     }
 }
