@@ -112,7 +112,7 @@ namespace ControlStructureAssignment
             Console.WriteLine();
             Console.WriteLine("Exercise 4B");
             Console.WriteLine();
-            int tally = 0;
+            double tally = 0;
             int userTotal = 0;
             string repeat = "y";
             while (repeat.Equals("y"))
@@ -131,11 +131,13 @@ namespace ControlStructureAssignment
                 }
                 Console.WriteLine("Do you want to continue? (y/n) ");
                 repeat = Console.ReadLine();
+                repeat = repeat.ToLower();
                 userTotal += intInput;
             }
+           
             Console.WriteLine("You added " + tally + " numbers together");
             Console.WriteLine("The total is " + userTotal);
-            Console.WriteLine("The average is " + userTotal / tally);
+            Console.WriteLine("The average is " + userTotal / tally );
             Console.ReadKey();
 
 
