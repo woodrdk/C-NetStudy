@@ -78,11 +78,16 @@ namespace MoreExceptionHandling
             // check all validation 
 
             // validate data
-            if (DoesTextBoxContainData(txtFirstName, "First Name") & DoesTextBoxContainInt32(txtAge, "Age"))
+            if (IsValid())
             {
                 // add data to database 
                 MessageBox.Show("data added");
             }
+        }
+
+        private bool IsValid()
+        {
+            return DoesTextBoxContainData(txtFirstName, "First Name") & DoesTextBoxContainInt32(txtAge, "Age");
         }
 
         private void ResetTextBoxErrors()
@@ -122,6 +127,28 @@ namespace MoreExceptionHandling
             error.SetError(txtAge, $"{name} is required");
             return false;
 
+        }
+
+        private void btnUnhandledException_Click(object sender, EventArgs e)
+        {
+            TestMethod1();
+        }
+
+        private void TestMethod1()
+        {
+            try
+            {
+                TestMethod2();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Exception caught");
+            }
+        }
+
+        private void TestMethod2()
+        {
+            throw new NotImplementedException();
         }
     }
 }

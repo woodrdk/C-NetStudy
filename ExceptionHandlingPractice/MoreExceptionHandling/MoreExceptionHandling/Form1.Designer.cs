@@ -33,6 +33,7 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.txtAge = new System.Windows.Forms.TextBox();
+            this.btnUnhandledException = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFirstName
@@ -77,11 +78,22 @@
             this.txtAge.Size = new System.Drawing.Size(100, 20);
             this.txtAge.TabIndex = 3;
             // 
+            // btnUnhandledException
+            // 
+            this.btnUnhandledException.Location = new System.Drawing.Point(106, 198);
+            this.btnUnhandledException.Name = "btnUnhandledException";
+            this.btnUnhandledException.Size = new System.Drawing.Size(200, 23);
+            this.btnUnhandledException.TabIndex = 5;
+            this.btnUnhandledException.Text = "Unhandled exceptiom";
+            this.btnUnhandledException.UseVisualStyleBackColor = true;
+            this.btnUnhandledException.Click += new System.EventHandler(this.btnUnhandledException_Click);
+            // 
             // frmMoreException
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUnhandledException);
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.txtAge);
             this.Controls.Add(this.lblFirstName);
@@ -102,6 +114,7 @@
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.TextBox txtAge;
+        private System.Windows.Forms.Button btnUnhandledException;
     }
 }
 
