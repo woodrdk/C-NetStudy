@@ -69,7 +69,6 @@ namespace Simple_Calculator
                     txtOperator.Text = "+";
                     if (DoesTextBoxContainDecimal(txtOperand1, "Operand 1") & DoesTextBoxContainDecimal(txtOperand2, "Operand 2"))
                     {
-                        //MessageBox.Show("data added"); // for testing sake
                         Calculate();
                     }
                 }
@@ -81,7 +80,7 @@ namespace Simple_Calculator
             {
                 txtResult.Text = "Error";
                 lblError.Visible = true;
-                lblError.Text = "You cannot devide by Zero  0";
+                lblError.Text = "You cannot divide by Zero  0";
             }
             else
             {
@@ -309,6 +308,7 @@ namespace Simple_Calculator
             txtOperand2.Clear();
             txtOperator.Clear();
             txtResult.Clear();
+            ResetTextBoxErrors();
         }
         private void btnCE_Click(object sender, EventArgs e)
         {
