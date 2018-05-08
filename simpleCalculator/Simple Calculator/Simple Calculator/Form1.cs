@@ -120,6 +120,10 @@ namespace Simple_Calculator
         private void txtOperator_TextChanged(object sender, EventArgs e)
         {
             clearAllText(txtOperator);
+            if (txtOperator.Text.Length > 0)
+            {
+                txtOperand2.Select();
+            }
         }
         private void clearAllText(TextBox textbox)
         {
@@ -277,6 +281,50 @@ namespace Simple_Calculator
         {
             lastFocused.Focus();
             lastFocused.Text = lastFocused.Text + "0";
+        }
+        private void btnDec_Click(object sender, EventArgs e)
+        {
+            lastFocused.Focus();
+            bool dec = (lastFocused.Text).Contains(".");
+            if (dec)
+            {
+                lastFocused.Text = lastFocused.Text + "";
+            }
+            else
+            {
+                lastFocused.Text = lastFocused.Text + ".";
+            }  
+        }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            lastFocused.Focus();
+            if (lastFocused.Text.Length > 0)
+            {
+                lastFocused.Text = lastFocused.Text.Remove(lastFocused.Text.Length - 1, 1);
+            }   
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtOperand1.Clear();
+            txtOperand2.Clear();
+            txtOperator.Clear();
+            txtResult.Clear();
+        }
+        private void btnCE_Click(object sender, EventArgs e)
+        {
+            txtOperand2.Clear();
+        }
+        private void btnPlusMinus_Click(object sender, EventArgs e)
+        {
+            lastFocused.Focus();
+            if (lastFocused.Text.StartsWith("-"))
+            {
+                lastFocused.Text = lastFocused.Text.Substring(1);
+            }
+            else
+            {
+                lastFocused.Text = "-" + lastFocused.Text;
+            }
         }
     }
 }
