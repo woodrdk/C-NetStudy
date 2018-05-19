@@ -20,16 +20,31 @@ namespace Simple_Calculator
                 box.LostFocus += textBoxFocusLost;
             }
         }
+        /// <summary>
+        ///  frmSimpleCalculator() initializes the app and sets  errors not to blink
+        /// </summary>
         public frmSimpleCalculator()
         {
             InitializeComponent();
             error.BlinkStyle = ErrorBlinkStyle.NeverBlink;
         }
         ErrorProvider error = new ErrorProvider();
+
+        /// <summary>
+        /// this button allows you to close the app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        /// <summary>
+        /// menu boxes for closing and a thank you message after closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmSimpleCalculator_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult choice = MessageBox.Show("Are you sure you want to quit? ", "Do you want to quit? ",
@@ -43,10 +58,21 @@ namespace Simple_Calculator
                 MessageBox.Show("Thank you for using this calculator");
             }
         }
+        /// <summary>
+        ///  menu file exit to close the app
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCalculate_Click(object sender, EventArgs e)
         {
             ResetTextBoxErrors();
@@ -314,6 +340,8 @@ namespace Simple_Calculator
         {
             txtOperand2.Clear();
         }
+
+        // this allows for the pos negative button
         private void btnPlusMinus_Click(object sender, EventArgs e)
         {
             lastFocused.Focus();
