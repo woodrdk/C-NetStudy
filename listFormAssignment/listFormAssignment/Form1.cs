@@ -12,7 +12,7 @@ namespace listFormAssignment
 {
     public partial class frmListForm : Form
     {
-        private string[] user = new string[10];
+        string[] user = new string[10];
         public frmListForm()
         {
             InitializeComponent();
