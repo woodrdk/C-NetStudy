@@ -5,3 +5,10 @@ C:\Users\rwood\Desktop\ConsoleTest\ConsoleTest\obj\Debug\ConsoleTest.csprojResol
 C:\Users\rwood\Desktop\ConsoleTest\ConsoleTest\obj\Debug\ConsoleTest.csproj.CoreCompileInputs.cache
 C:\Users\rwood\Desktop\ConsoleTest\ConsoleTest\obj\Debug\ConsoleTest.exe
 C:\Users\rwood\Desktop\ConsoleTest\ConsoleTest\obj\Debug\ConsoleTest.pdb
+C:\Users\rdrwo\Source\Repos\C-NetStudy\ConsoleTest\ConsoleTest\bin\Debug\ConsoleTest.exe.config
+C:\Users\rdrwo\Source\Repos\C-NetStudy\ConsoleTest\ConsoleTest\bin\Debug\ConsoleTest.exe
+C:\Users\rdrwo\Source\Repos\C-NetStudy\ConsoleTest\ConsoleTest\bin\Debug\ConsoleTest.pdb
+C:\Users\rdrwo\Source\Repos\C-NetStudy\ConsoleTest\ConsoleTest\obj\Debug\ConsoleTest.csprojAssemblyReference.cache
+C:\Users\rdrwo\Source\Repos\C-NetStudy\ConsoleTest\ConsoleTest\obj\Debug\ConsoleTest.csproj.CoreCompileInputs.cache
+C:\Users\rdrwo\Source\Repos\C-NetStudy\ConsoleTest\ConsoleTest\obj\Debug\ConsoleTest.exe
+C:\Users\rdrwo\Source\Repos\C-NetStudy\ConsoleTest\ConsoleTest\obj\Debug\ConsoleTest.pdb

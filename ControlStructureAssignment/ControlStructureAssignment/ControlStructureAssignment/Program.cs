@@ -115,8 +115,10 @@ namespace ControlStructureAssignment
             double tally = 0;
             int userTotal = 0;
             string repeat = "y";
-            while (repeat.Equals("y"))
+            int count = 0;
+            while (repeat.Equals("y") || count==5)
             {
+                count++;
                 tally++;
                 Console.WriteLine("Enter an integer");
                 string userInput = Console.ReadLine();
