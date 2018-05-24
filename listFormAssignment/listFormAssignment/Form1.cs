@@ -13,6 +13,7 @@ namespace listFormAssignment
     public partial class frmListForm : Form
     {
         string[] user = new string[10];
+        
         public frmListForm()
         {
             InitializeComponent();
@@ -28,18 +29,25 @@ namespace listFormAssignment
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtName.Text))
+            int count = 0;
+            while(count < 10)
             {
-                MessageBox.Show("Please enter a name!");
 
-            }
-            else
-            {
-                user.Add(txtName.Text.Trim());
-                MessageBox.Show("Name added");
+                if (string.IsNullOrWhiteSpace(txtName.Text))
+                {
+                    MessageBox.Show("Please enter a name!");
+                }
+                else
+                {
+                    user[count] = (txtName.Text.Trim());
+                    //MessageBox.Show("Name added");
+                }
+ 
+               
             }
             txtName.Clear();
             txtName.Focus();
+            count++;
         }
 
         private void txtName_TextChanged(object sender, EventArgs e)
@@ -49,44 +57,28 @@ namespace listFormAssignment
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            user.Clear();
+            Array.Clear(user, 0, user.Length);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            lstNames.Items.Clear();
-            string searchTerm = txtSearch.Text.Trim().ToLower();
-            searchTerm = searchTerm.Trim();
-
-            if (searchTerm == string.Empty)
-            {
-                return;
-            }
-
-            foreach (string stu in user)
-            {
-                if (stu.ToLower().Contains(searchTerm))
-                {
-                    lstNames.Items.Add(stu);
-                }
-            }
+           
         }
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
-            if (user.Count == 0)
+            //MessageBox.Show(user.Length.ToString());
+            if (user[0] == "")
             {
                 MessageBox.Show("No Names");
-                return;
             }
 
-            if (user.Count == 10)
-            {
-                MessageBox.Show("You are at limit of 10 names");
+            else {
+                string separator = ", ";
+                lstNames.Text = String.Join(separator, user);
             }
-
-            string display = string.Join("\n", user);
-            MessageBox.Show(display);
+            
+            
 
         }
     }
