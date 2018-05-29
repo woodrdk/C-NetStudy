@@ -31,6 +31,10 @@
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblDOB = new System.Windows.Forms.Label();
+            this.txtDOB = new System.Windows.Forms.TextBox();
+            this.lblMajor = new System.Windows.Forms.Label();
+            this.txtMajor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAddStudent
@@ -59,11 +63,47 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Name";
             // 
+            // lblDOB
+            // 
+            this.lblDOB.AutoSize = true;
+            this.lblDOB.Location = new System.Drawing.Point(82, 101);
+            this.lblDOB.Name = "lblDOB";
+            this.lblDOB.Size = new System.Drawing.Size(68, 13);
+            this.lblDOB.TabIndex = 4;
+            this.lblDOB.Text = "Date Of Birth";
+            // 
+            // txtDOB
+            // 
+            this.txtDOB.Location = new System.Drawing.Point(241, 98);
+            this.txtDOB.Name = "txtDOB";
+            this.txtDOB.Size = new System.Drawing.Size(100, 20);
+            this.txtDOB.TabIndex = 3;
+            // 
+            // lblMajor
+            // 
+            this.lblMajor.AutoSize = true;
+            this.lblMajor.Location = new System.Drawing.Point(82, 132);
+            this.lblMajor.Name = "lblMajor";
+            this.lblMajor.Size = new System.Drawing.Size(33, 13);
+            this.lblMajor.TabIndex = 6;
+            this.lblMajor.Text = "Major";
+            // 
+            // txtMajor
+            // 
+            this.txtMajor.Location = new System.Drawing.Point(241, 129);
+            this.txtMajor.Name = "txtMajor";
+            this.txtMajor.Size = new System.Drawing.Size(100, 20);
+            this.txtMajor.TabIndex = 5;
+            // 
             // frmAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 434);
+            this.Controls.Add(this.lblMajor);
+            this.Controls.Add(this.txtMajor);
+            this.Controls.Add(this.lblDOB);
+            this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnAddStudent);
@@ -80,5 +120,9 @@
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDOB;
+        private System.Windows.Forms.TextBox txtDOB;
+        private System.Windows.Forms.Label lblMajor;
+        private System.Windows.Forms.TextBox txtMajor;
     }
 }

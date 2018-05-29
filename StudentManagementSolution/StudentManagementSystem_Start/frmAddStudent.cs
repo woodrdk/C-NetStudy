@@ -27,23 +27,48 @@ namespace StudentManagementSystem_Start
         }
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            // if data is valid
-            string name = txtName.Text;
+            if (IsDataValid())
+            {
+                string name = txtName.Text;
+                DateTime dob = Convert.ToDateTime(txtDOB.Text);
+                string major = txtMajor.Text;
 
-            // add all data to student object
+                // add all data to student object
+                // Method 1: populate object property by property
+                var addStu = new Student();
+                addStu.FirstName = name;
+                addStu.DateOfBirth = dob;
+                addStu.Major = major;
+                // database will generate SID
 
-            // add student object to database
+                // method 2: pbject initialization syntax
+                var addStu2 = new Student()
+                {
+                    FirstName = name,
+                    DateOfBirth = dob,
+                    Major = major
+                };
 
-            // if added to database
+                // method 3: use the constructor
+                var addstu3 = new Student(name, dob, major);
 
-            // store data in Tag property to access on main form
-            this.Tag = name;
-            this.StudentName = name;
-            this.stu = name;
+                // add student object to database
 
-            this.DialogResult = DialogResult.OK;
+                // if added to database
 
+                // store data in Tag property to access on main form
+                this.Tag = name;
+                this.StudentName = name;
+                this.stu = name;
 
+                this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private bool IsDataValid()
+        {
+            // implement validation in version 2.0
+            return true;
         }
     }
 }
