@@ -53,6 +53,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 1;
+            this.txtName.Tag = "Name";
             // 
             // label1
             // 
@@ -78,6 +79,7 @@
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(100, 20);
             this.txtDOB.TabIndex = 3;
+            this.txtDOB.Tag = "Date of birth";
             // 
             // lblMajor
             // 

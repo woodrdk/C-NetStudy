@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static StudentManagementSystem_Start.validator;
 
 namespace StudentManagementSystem_Start
 {
@@ -67,8 +68,42 @@ namespace StudentManagementSystem_Start
 
         private bool IsDataValid()
         {
-            // implement validation in version 2.0
-            return true;
+            bool isValid = true;
+
+            if (!DoesTextBoxContainText(txtMajor))
+            {
+                MessageBox.Show("Name must have data");
+                isValid = false;
+            }
+
+
+            if (!validator.DoesTextBoxContainText(txtName)) {
+                MessageBox.Show($"{currBox.Tag} is Required!");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        private bool AreAllTextboxesValid()
+        {
+            bool isValid = true;
+            
+            //loop thru every control on form
+            foreach (Control c in this.Controls)
+            {
+                if (c is TextBox)
+                {
+                    TextBox currBox = c as TextBox;
+                    if (currBox.ReadOnly) {
+                        continue;
+                    }
+                    if(!validator.DoesTextBoxContainText(c as TextBox))
+                    {
+                        isValid = false;
+                    }
+                }
+            }
         }
     }
 }
