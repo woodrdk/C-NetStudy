@@ -21,8 +21,9 @@ namespace LunchOrderForm
 
         private void rbHamburger_CheckedChanged(object sender, EventArgs e)
         {
-            AddOnItemVisible(gbAddOnHamburger);
+            AddOnItemVisible(addOns);
             order.Add(6.95);
+            addOns.Text = "Hamburger Add-On Items($0.75 / each)";
         }      
         private void AddOnItemVisible(GroupBox food)
         {
@@ -40,6 +41,7 @@ namespace LunchOrderForm
         {
             AddOnItemVisible(gbAddOnPizza);
             order.Add(5.95);
+            addOns.Text = "Pizza Add-On Items ($0.50 / each)";
         }
         private void gbMainCourse_Enter(object sender, EventArgs e)
         {
@@ -49,6 +51,7 @@ namespace LunchOrderForm
         {
             AddOnItemVisible(gbAddOnSalad);
             order.Add(4.95);
+            addOns.Text = "Salad Add-On Items($0.25 / each)";
         }
 
         private void btnPlaceOrder_Click(object sender, EventArgs e)
@@ -86,26 +89,11 @@ namespace LunchOrderForm
         {
             order.Add(0.75);
         }
-        private void cbTomato_CheckedChanged(object sender, EventArgs e)
+        private void cbKetchup_CheckedChanged(object sender, EventArgs e)
         {
             order.Add(0.75);
         }
-        private void cbOnion_CheckedChanged(object sender, EventArgs e)
-        {
-            order.Add(0.75);
-        }
-        private void cbKetrchup_CheckedChanged(object sender, EventArgs e)
-        {
-            order.Add(0.75);
-        }
-        private void cbMustard_CheckedChanged(object sender, EventArgs e)
-        {
-            order.Add(0.75);
-        }
-        private void cbMayo_CheckedChanged(object sender, EventArgs e)
-        {
-            order.Add(0.75);
-        }
+
         private void cbFrenchFries_CheckedChanged(object sender, EventArgs e)
         {
             order.Add(0.75);
@@ -141,9 +129,14 @@ namespace LunchOrderForm
             txtOrderTotal.Text = "";
             txtSubTotal.Text = "";
             txtTax.Text = "";
-            gbAddOnHamburger.Visible = false;
+            addOns.Visible = false;
             gbAddOnPizza.Visible = false;
             gbAddOnSalad.Visible = false;
+        }
+
+        private void gbAddOnHamburger_Enter(object sender, EventArgs e)
+        {
+       
         }
     }
 }

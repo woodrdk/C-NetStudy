@@ -29,40 +29,36 @@
         private void InitializeComponent()
         {
             this.gbMainCourse = new System.Windows.Forms.GroupBox();
-            this.gbAddOnHamburger = new System.Windows.Forms.GroupBox();
+            this.rbSalad = new System.Windows.Forms.RadioButton();
+            this.rbPizza = new System.Windows.Forms.RadioButton();
+            this.rbHamburger = new System.Windows.Forms.RadioButton();
+            this.addOns = new System.Windows.Forms.GroupBox();
+            this.cbFrenchFries = new System.Windows.Forms.CheckBox();
+            this.cbKetrchup = new System.Windows.Forms.CheckBox();
+            this.cbLettuce = new System.Windows.Forms.CheckBox();
             this.gbOrderTotal = new System.Windows.Forms.GroupBox();
+            this.txtOrderTotal = new System.Windows.Forms.TextBox();
+            this.txtTax = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
+            this.lblOrderTotal = new System.Windows.Forms.Label();
+            this.lblTax = new System.Windows.Forms.Label();
+            this.lblSubtotal = new System.Windows.Forms.Label();
             this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.rbHamburger = new System.Windows.Forms.RadioButton();
-            this.rbPizza = new System.Windows.Forms.RadioButton();
-            this.rbSalad = new System.Windows.Forms.RadioButton();
-            this.lblSubtotal = new System.Windows.Forms.Label();
-            this.lblTax = new System.Windows.Forms.Label();
-            this.lblOrderTotal = new System.Windows.Forms.Label();
-            this.txtSubTotal = new System.Windows.Forms.TextBox();
-            this.txtTax = new System.Windows.Forms.TextBox();
-            this.txtOrderTotal = new System.Windows.Forms.TextBox();
-            this.cbLettuce = new System.Windows.Forms.CheckBox();
-            this.cbKetrchup = new System.Windows.Forms.CheckBox();
-            this.cbFrenchFries = new System.Windows.Forms.CheckBox();
-            this.cbMayo = new System.Windows.Forms.CheckBox();
-            this.cbMustard = new System.Windows.Forms.CheckBox();
-            this.cbOnion = new System.Windows.Forms.CheckBox();
-            this.cbTomato = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbAddOnSalad = new System.Windows.Forms.GroupBox();
+            this.cbBreadsticls = new System.Windows.Forms.CheckBox();
+            this.cbBaconbits = new System.Windows.Forms.CheckBox();
+            this.cbCroutons = new System.Windows.Forms.CheckBox();
             this.gbAddOnPizza = new System.Windows.Forms.GroupBox();
             this.cbOlives = new System.Windows.Forms.CheckBox();
             this.cbSausage = new System.Windows.Forms.CheckBox();
             this.cbPepperoni = new System.Windows.Forms.CheckBox();
-            this.cbCroutons = new System.Windows.Forms.CheckBox();
-            this.cbBaconbits = new System.Windows.Forms.CheckBox();
-            this.cbBreadsticls = new System.Windows.Forms.CheckBox();
             this.btnClearOrder = new System.Windows.Forms.Button();
             this.gbMainCourse.SuspendLayout();
-            this.gbAddOnHamburger.SuspendLayout();
+            this.addOns.SuspendLayout();
             this.gbOrderTotal.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.gbAddOnSalad.SuspendLayout();
@@ -82,69 +78,17 @@
             this.gbMainCourse.Text = "Main Course";
             this.gbMainCourse.Enter += new System.EventHandler(this.gbMainCourse_Enter);
             // 
-            // gbAddOnHamburger
+            // rbSalad
             // 
-            this.gbAddOnHamburger.Controls.Add(this.cbTomato);
-            this.gbAddOnHamburger.Controls.Add(this.cbOnion);
-            this.gbAddOnHamburger.Controls.Add(this.cbMustard);
-            this.gbAddOnHamburger.Controls.Add(this.cbMayo);
-            this.gbAddOnHamburger.Controls.Add(this.cbFrenchFries);
-            this.gbAddOnHamburger.Controls.Add(this.cbKetrchup);
-            this.gbAddOnHamburger.Controls.Add(this.cbLettuce);
-            this.gbAddOnHamburger.Location = new System.Drawing.Point(208, 59);
-            this.gbAddOnHamburger.Name = "gbAddOnHamburger";
-            this.gbAddOnHamburger.Size = new System.Drawing.Size(215, 187);
-            this.gbAddOnHamburger.TabIndex = 1;
-            this.gbAddOnHamburger.TabStop = false;
-            this.gbAddOnHamburger.Text = "Hamburger Add-On Items ($0.75 / each)";
-            this.gbAddOnHamburger.Visible = false;
-            // 
-            // gbOrderTotal
-            // 
-            this.gbOrderTotal.Controls.Add(this.txtOrderTotal);
-            this.gbOrderTotal.Controls.Add(this.txtTax);
-            this.gbOrderTotal.Controls.Add(this.txtSubTotal);
-            this.gbOrderTotal.Controls.Add(this.lblOrderTotal);
-            this.gbOrderTotal.Controls.Add(this.lblTax);
-            this.gbOrderTotal.Controls.Add(this.lblSubtotal);
-            this.gbOrderTotal.Location = new System.Drawing.Point(49, 264);
-            this.gbOrderTotal.Name = "gbOrderTotal";
-            this.gbOrderTotal.Size = new System.Drawing.Size(200, 100);
-            this.gbOrderTotal.TabIndex = 2;
-            this.gbOrderTotal.TabStop = false;
-            this.gbOrderTotal.Text = "Order Total";
-            // 
-            // btnPlaceOrder
-            // 
-            this.btnPlaceOrder.Location = new System.Drawing.Point(297, 264);
-            this.btnPlaceOrder.Name = "btnPlaceOrder";
-            this.btnPlaceOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnPlaceOrder.TabIndex = 3;
-            this.btnPlaceOrder.Text = "Place Order";
-            this.btnPlaceOrder.UseVisualStyleBackColor = true;
-            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(297, 341);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // rbHamburger
-            // 
-            this.rbHamburger.AutoSize = true;
-            this.rbHamburger.Location = new System.Drawing.Point(7, 20);
-            this.rbHamburger.Name = "rbHamburger";
-            this.rbHamburger.Size = new System.Drawing.Size(113, 17);
-            this.rbHamburger.TabIndex = 0;
-            this.rbHamburger.TabStop = true;
-            this.rbHamburger.Text = "Hamburger - $6.95";
-            this.rbHamburger.UseVisualStyleBackColor = true;
-            this.rbHamburger.CheckedChanged += new System.EventHandler(this.rbHamburger_CheckedChanged);
+            this.rbSalad.AutoSize = true;
+            this.rbSalad.Location = new System.Drawing.Point(7, 68);
+            this.rbSalad.Name = "rbSalad";
+            this.rbSalad.Size = new System.Drawing.Size(88, 17);
+            this.rbSalad.TabIndex = 2;
+            this.rbSalad.TabStop = true;
+            this.rbSalad.Text = "Salad - $4.95";
+            this.rbSalad.UseVisualStyleBackColor = true;
+            this.rbSalad.CheckedChanged += new System.EventHandler(this.rbSalad_CheckedChanged);
             // 
             // rbPizza
             // 
@@ -158,35 +102,102 @@
             this.rbPizza.UseVisualStyleBackColor = true;
             this.rbPizza.CheckedChanged += new System.EventHandler(this.rbPizza_CheckedChanged);
             // 
-            // rbSalad
+            // rbHamburger
             // 
-            this.rbSalad.AutoSize = true;
-            this.rbSalad.Location = new System.Drawing.Point(7, 68);
-            this.rbSalad.Name = "rbSalad";
-            this.rbSalad.Size = new System.Drawing.Size(88, 17);
-            this.rbSalad.TabIndex = 2;
-            this.rbSalad.TabStop = true;
-            this.rbSalad.Text = "Salad - $4.95";
-            this.rbSalad.UseVisualStyleBackColor = true;
-            this.rbSalad.CheckedChanged += new System.EventHandler(this.rbSalad_CheckedChanged);
+            this.rbHamburger.AutoSize = true;
+            this.rbHamburger.Location = new System.Drawing.Point(7, 20);
+            this.rbHamburger.Name = "rbHamburger";
+            this.rbHamburger.Size = new System.Drawing.Size(113, 17);
+            this.rbHamburger.TabIndex = 0;
+            this.rbHamburger.TabStop = true;
+            this.rbHamburger.Text = "Hamburger - $6.95";
+            this.rbHamburger.UseVisualStyleBackColor = true;
+            this.rbHamburger.CheckedChanged += new System.EventHandler(this.rbHamburger_CheckedChanged);
             // 
-            // lblSubtotal
+            // addOns
             // 
-            this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.Location = new System.Drawing.Point(39, 23);
-            this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(49, 13);
-            this.lblSubtotal.TabIndex = 0;
-            this.lblSubtotal.Text = "Subtotal:";
+            this.addOns.Controls.Add(this.cbFrenchFries);
+            this.addOns.Controls.Add(this.cbKetrchup);
+            this.addOns.Controls.Add(this.cbLettuce);
+            this.addOns.Location = new System.Drawing.Point(208, 59);
+            this.addOns.Name = "addOns";
+            this.addOns.Size = new System.Drawing.Size(215, 100);
+            this.addOns.TabIndex = 1;
+            this.addOns.TabStop = false;
+            this.addOns.Visible = false;
+            this.addOns.Enter += new System.EventHandler(this.gbAddOnHamburger_Enter);
             // 
-            // lblTax
+            // cbFrenchFries
             // 
-            this.lblTax.AutoSize = true;
-            this.lblTax.Location = new System.Drawing.Point(19, 48);
-            this.lblTax.Name = "lblTax";
-            this.lblTax.Size = new System.Drawing.Size(69, 13);
-            this.lblTax.TabIndex = 1;
-            this.lblTax.Text = "Tax ( 7.75%):";
+            this.cbFrenchFries.AutoSize = true;
+            this.cbFrenchFries.Location = new System.Drawing.Point(8, 75);
+            this.cbFrenchFries.Name = "cbFrenchFries";
+            this.cbFrenchFries.Size = new System.Drawing.Size(81, 17);
+            this.cbFrenchFries.TabIndex = 2;
+            this.cbFrenchFries.Text = "FrenchFries";
+            this.cbFrenchFries.UseVisualStyleBackColor = true;
+            this.cbFrenchFries.CheckedChanged += new System.EventHandler(this.cbFrenchFries_CheckedChanged);
+            // 
+            // cbKetrchup
+            // 
+            this.cbKetrchup.AutoSize = true;
+            this.cbKetrchup.Location = new System.Drawing.Point(7, 52);
+            this.cbKetrchup.Name = "cbKetrchup";
+            this.cbKetrchup.Size = new System.Drawing.Size(172, 17);
+            this.cbKetrchup.TabIndex = 1;
+            this.cbKetrchup.Text = "Ketchup, Mustard, Mayonaisse";
+            this.cbKetrchup.UseVisualStyleBackColor = true;
+            this.cbKetrchup.CheckedChanged += new System.EventHandler(this.cbKetchup_CheckedChanged);
+            // 
+            // cbLettuce
+            // 
+            this.cbLettuce.AutoSize = true;
+            this.cbLettuce.Location = new System.Drawing.Point(7, 29);
+            this.cbLettuce.Name = "cbLettuce";
+            this.cbLettuce.Size = new System.Drawing.Size(143, 17);
+            this.cbLettuce.TabIndex = 0;
+            this.cbLettuce.Text = "Lettuce, Tomato, Onions";
+            this.cbLettuce.UseVisualStyleBackColor = true;
+            this.cbLettuce.CheckedChanged += new System.EventHandler(this.cbLettuce_CheckedChanged);
+            // 
+            // gbOrderTotal
+            // 
+            this.gbOrderTotal.Controls.Add(this.txtOrderTotal);
+            this.gbOrderTotal.Controls.Add(this.txtTax);
+            this.gbOrderTotal.Controls.Add(this.txtSubTotal);
+            this.gbOrderTotal.Controls.Add(this.lblOrderTotal);
+            this.gbOrderTotal.Controls.Add(this.lblTax);
+            this.gbOrderTotal.Controls.Add(this.lblSubtotal);
+            this.gbOrderTotal.Location = new System.Drawing.Point(49, 188);
+            this.gbOrderTotal.Name = "gbOrderTotal";
+            this.gbOrderTotal.Size = new System.Drawing.Size(200, 100);
+            this.gbOrderTotal.TabIndex = 2;
+            this.gbOrderTotal.TabStop = false;
+            this.gbOrderTotal.Text = "Order Total";
+            // 
+            // txtOrderTotal
+            // 
+            this.txtOrderTotal.Location = new System.Drawing.Point(94, 70);
+            this.txtOrderTotal.Name = "txtOrderTotal";
+            this.txtOrderTotal.ReadOnly = true;
+            this.txtOrderTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtOrderTotal.TabIndex = 5;
+            // 
+            // txtTax
+            // 
+            this.txtTax.Location = new System.Drawing.Point(94, 45);
+            this.txtTax.Name = "txtTax";
+            this.txtTax.ReadOnly = true;
+            this.txtTax.Size = new System.Drawing.Size(100, 20);
+            this.txtTax.TabIndex = 4;
+            // 
+            // txtSubTotal
+            // 
+            this.txtSubTotal.Location = new System.Drawing.Point(94, 20);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.ReadOnly = true;
+            this.txtSubTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtSubTotal.TabIndex = 3;
             // 
             // lblOrderTotal
             // 
@@ -197,106 +208,43 @@
             this.lblOrderTotal.TabIndex = 2;
             this.lblOrderTotal.Text = "Order Total:";
             // 
-            // txtSubTotal
+            // lblTax
             // 
-            this.txtSubTotal.Location = new System.Drawing.Point(94, 20);
-            this.txtSubTotal.Name = "txtSubTotal";
-            this.txtSubTotal.ReadOnly = true;
-            this.txtSubTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtSubTotal.TabIndex = 3;
+            this.lblTax.AutoSize = true;
+            this.lblTax.Location = new System.Drawing.Point(19, 48);
+            this.lblTax.Name = "lblTax";
+            this.lblTax.Size = new System.Drawing.Size(69, 13);
+            this.lblTax.TabIndex = 1;
+            this.lblTax.Text = "Tax ( 7.75%):";
             // 
-            // txtTax
+            // lblSubtotal
             // 
-            this.txtTax.Location = new System.Drawing.Point(94, 45);
-            this.txtTax.Name = "txtTax";
-            this.txtTax.ReadOnly = true;
-            this.txtTax.Size = new System.Drawing.Size(100, 20);
-            this.txtTax.TabIndex = 4;
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.Location = new System.Drawing.Point(39, 23);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(49, 13);
+            this.lblSubtotal.TabIndex = 0;
+            this.lblSubtotal.Text = "Subtotal:";
             // 
-            // txtOrderTotal
+            // btnPlaceOrder
             // 
-            this.txtOrderTotal.Location = new System.Drawing.Point(94, 70);
-            this.txtOrderTotal.Name = "txtOrderTotal";
-            this.txtOrderTotal.ReadOnly = true;
-            this.txtOrderTotal.Size = new System.Drawing.Size(100, 20);
-            this.txtOrderTotal.TabIndex = 5;
+            this.btnPlaceOrder.Location = new System.Drawing.Point(297, 188);
+            this.btnPlaceOrder.Name = "btnPlaceOrder";
+            this.btnPlaceOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnPlaceOrder.TabIndex = 3;
+            this.btnPlaceOrder.Text = "Place Order";
+            this.btnPlaceOrder.UseVisualStyleBackColor = true;
+            this.btnPlaceOrder.Click += new System.EventHandler(this.btnPlaceOrder_Click);
             // 
-            // cbLettuce
+            // btnExit
             // 
-            this.cbLettuce.AutoSize = true;
-            this.cbLettuce.Location = new System.Drawing.Point(7, 29);
-            this.cbLettuce.Name = "cbLettuce";
-            this.cbLettuce.Size = new System.Drawing.Size(62, 17);
-            this.cbLettuce.TabIndex = 0;
-            this.cbLettuce.Text = "Lettuce";
-            this.cbLettuce.UseVisualStyleBackColor = true;
-            this.cbLettuce.CheckedChanged += new System.EventHandler(this.cbLettuce_CheckedChanged);
-            // 
-            // cbKetrchup
-            // 
-            this.cbKetrchup.AutoSize = true;
-            this.cbKetrchup.Location = new System.Drawing.Point(6, 98);
-            this.cbKetrchup.Name = "cbKetrchup";
-            this.cbKetrchup.Size = new System.Drawing.Size(66, 17);
-            this.cbKetrchup.TabIndex = 1;
-            this.cbKetrchup.Text = "Ketchup";
-            this.cbKetrchup.UseVisualStyleBackColor = true;
-            this.cbKetrchup.CheckedChanged += new System.EventHandler(this.cbKetrchup_CheckedChanged);
-            // 
-            // cbFrenchFries
-            // 
-            this.cbFrenchFries.AutoSize = true;
-            this.cbFrenchFries.Location = new System.Drawing.Point(6, 167);
-            this.cbFrenchFries.Name = "cbFrenchFries";
-            this.cbFrenchFries.Size = new System.Drawing.Size(81, 17);
-            this.cbFrenchFries.TabIndex = 2;
-            this.cbFrenchFries.Text = "FrenchFries";
-            this.cbFrenchFries.UseVisualStyleBackColor = true;
-            this.cbFrenchFries.CheckedChanged += new System.EventHandler(this.cbFrenchFries_CheckedChanged);
-            // 
-            // cbMayo
-            // 
-            this.cbMayo.AutoSize = true;
-            this.cbMayo.Location = new System.Drawing.Point(6, 144);
-            this.cbMayo.Name = "cbMayo";
-            this.cbMayo.Size = new System.Drawing.Size(82, 17);
-            this.cbMayo.TabIndex = 3;
-            this.cbMayo.Text = "Mayonaisse";
-            this.cbMayo.UseVisualStyleBackColor = true;
-            this.cbMayo.CheckedChanged += new System.EventHandler(this.cbMayo_CheckedChanged);
-            // 
-            // cbMustard
-            // 
-            this.cbMustard.AutoSize = true;
-            this.cbMustard.Location = new System.Drawing.Point(6, 121);
-            this.cbMustard.Name = "cbMustard";
-            this.cbMustard.Size = new System.Drawing.Size(64, 17);
-            this.cbMustard.TabIndex = 4;
-            this.cbMustard.Text = "Mustard";
-            this.cbMustard.UseVisualStyleBackColor = true;
-            this.cbMustard.CheckedChanged += new System.EventHandler(this.cbMustard_CheckedChanged);
-            // 
-            // cbOnion
-            // 
-            this.cbOnion.AutoSize = true;
-            this.cbOnion.Location = new System.Drawing.Point(6, 75);
-            this.cbOnion.Name = "cbOnion";
-            this.cbOnion.Size = new System.Drawing.Size(59, 17);
-            this.cbOnion.TabIndex = 5;
-            this.cbOnion.Text = "Onions";
-            this.cbOnion.UseVisualStyleBackColor = true;
-            this.cbOnion.CheckedChanged += new System.EventHandler(this.cbOnion_CheckedChanged);
-            // 
-            // cbTomato
-            // 
-            this.cbTomato.AutoSize = true;
-            this.cbTomato.Location = new System.Drawing.Point(6, 52);
-            this.cbTomato.Name = "cbTomato";
-            this.cbTomato.Size = new System.Drawing.Size(62, 17);
-            this.cbTomato.TabIndex = 6;
-            this.cbTomato.Text = "Tomato";
-            this.cbTomato.UseVisualStyleBackColor = true;
-            this.cbTomato.CheckedChanged += new System.EventHandler(this.cbTomato_CheckedChanged);
+            this.btnExit.Location = new System.Drawing.Point(297, 265);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // menuStrip1
             // 
@@ -304,7 +252,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(774, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(642, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -319,7 +267,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -333,20 +281,51 @@
             this.gbAddOnSalad.Size = new System.Drawing.Size(200, 100);
             this.gbAddOnSalad.TabIndex = 6;
             this.gbAddOnSalad.TabStop = false;
-            this.gbAddOnSalad.Text = "Salad Add-On Items ($0.25/ each)";
             this.gbAddOnSalad.Visible = false;
+            // 
+            // cbBreadsticls
+            // 
+            this.cbBreadsticls.AutoSize = true;
+            this.cbBreadsticls.Location = new System.Drawing.Point(7, 77);
+            this.cbBreadsticls.Name = "cbBreadsticls";
+            this.cbBreadsticls.Size = new System.Drawing.Size(86, 17);
+            this.cbBreadsticls.TabIndex = 2;
+            this.cbBreadsticls.Text = "Bread Sticks";
+            this.cbBreadsticls.UseVisualStyleBackColor = true;
+            this.cbBreadsticls.CheckedChanged += new System.EventHandler(this.cbBreadsticls_CheckedChanged);
+            // 
+            // cbBaconbits
+            // 
+            this.cbBaconbits.AutoSize = true;
+            this.cbBaconbits.Location = new System.Drawing.Point(7, 53);
+            this.cbBaconbits.Name = "cbBaconbits";
+            this.cbBaconbits.Size = new System.Drawing.Size(77, 17);
+            this.cbBaconbits.TabIndex = 1;
+            this.cbBaconbits.Text = "Bacon Bits";
+            this.cbBaconbits.UseVisualStyleBackColor = true;
+            this.cbBaconbits.CheckedChanged += new System.EventHandler(this.cbBaconbits_CheckedChanged);
+            // 
+            // cbCroutons
+            // 
+            this.cbCroutons.AutoSize = true;
+            this.cbCroutons.Location = new System.Drawing.Point(7, 29);
+            this.cbCroutons.Name = "cbCroutons";
+            this.cbCroutons.Size = new System.Drawing.Size(68, 17);
+            this.cbCroutons.TabIndex = 0;
+            this.cbCroutons.Text = "Croutons";
+            this.cbCroutons.UseVisualStyleBackColor = true;
+            this.cbCroutons.CheckedChanged += new System.EventHandler(this.cbCroutons_CheckedChanged);
             // 
             // gbAddOnPizza
             // 
             this.gbAddOnPizza.Controls.Add(this.cbOlives);
             this.gbAddOnPizza.Controls.Add(this.cbSausage);
             this.gbAddOnPizza.Controls.Add(this.cbPepperoni);
-            this.gbAddOnPizza.Location = new System.Drawing.Point(412, 264);
+            this.gbAddOnPizza.Location = new System.Drawing.Point(429, 165);
             this.gbAddOnPizza.Name = "gbAddOnPizza";
             this.gbAddOnPizza.Size = new System.Drawing.Size(200, 100);
             this.gbAddOnPizza.TabIndex = 7;
             this.gbAddOnPizza.TabStop = false;
-            this.gbAddOnPizza.Text = "Pizza Add-On Items ($0.50 / each)";
             this.gbAddOnPizza.Visible = false;
             // 
             // cbOlives
@@ -382,42 +361,9 @@
             this.cbPepperoni.UseVisualStyleBackColor = true;
             this.cbPepperoni.CheckedChanged += new System.EventHandler(this.cbPepperoni_CheckedChanged);
             // 
-            // cbCroutons
-            // 
-            this.cbCroutons.AutoSize = true;
-            this.cbCroutons.Location = new System.Drawing.Point(7, 29);
-            this.cbCroutons.Name = "cbCroutons";
-            this.cbCroutons.Size = new System.Drawing.Size(68, 17);
-            this.cbCroutons.TabIndex = 0;
-            this.cbCroutons.Text = "Croutons";
-            this.cbCroutons.UseVisualStyleBackColor = true;
-            this.cbCroutons.CheckedChanged += new System.EventHandler(this.cbCroutons_CheckedChanged);
-            // 
-            // cbBaconbits
-            // 
-            this.cbBaconbits.AutoSize = true;
-            this.cbBaconbits.Location = new System.Drawing.Point(7, 53);
-            this.cbBaconbits.Name = "cbBaconbits";
-            this.cbBaconbits.Size = new System.Drawing.Size(77, 17);
-            this.cbBaconbits.TabIndex = 1;
-            this.cbBaconbits.Text = "Bacon Bits";
-            this.cbBaconbits.UseVisualStyleBackColor = true;
-            this.cbBaconbits.CheckedChanged += new System.EventHandler(this.cbBaconbits_CheckedChanged);
-            // 
-            // cbBreadsticls
-            // 
-            this.cbBreadsticls.AutoSize = true;
-            this.cbBreadsticls.Location = new System.Drawing.Point(7, 77);
-            this.cbBreadsticls.Name = "cbBreadsticls";
-            this.cbBreadsticls.Size = new System.Drawing.Size(86, 17);
-            this.cbBreadsticls.TabIndex = 2;
-            this.cbBreadsticls.Text = "Bread Sticks";
-            this.cbBreadsticls.UseVisualStyleBackColor = true;
-            this.cbBreadsticls.CheckedChanged += new System.EventHandler(this.cbBreadsticls_CheckedChanged);
-            // 
             // btnClearOrder
             // 
-            this.btnClearOrder.Location = new System.Drawing.Point(297, 301);
+            this.btnClearOrder.Location = new System.Drawing.Point(297, 225);
             this.btnClearOrder.Name = "btnClearOrder";
             this.btnClearOrder.Size = new System.Drawing.Size(75, 23);
             this.btnClearOrder.TabIndex = 8;
@@ -429,14 +375,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(774, 418);
+            this.ClientSize = new System.Drawing.Size(642, 320);
             this.Controls.Add(this.btnClearOrder);
             this.Controls.Add(this.gbAddOnPizza);
             this.Controls.Add(this.gbAddOnSalad);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPlaceOrder);
             this.Controls.Add(this.gbOrderTotal);
-            this.Controls.Add(this.gbAddOnHamburger);
+            this.Controls.Add(this.addOns);
             this.Controls.Add(this.gbMainCourse);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -444,8 +390,8 @@
             this.Text = "LunchOrder";
             this.gbMainCourse.ResumeLayout(false);
             this.gbMainCourse.PerformLayout();
-            this.gbAddOnHamburger.ResumeLayout(false);
-            this.gbAddOnHamburger.PerformLayout();
+            this.addOns.ResumeLayout(false);
+            this.addOns.PerformLayout();
             this.gbOrderTotal.ResumeLayout(false);
             this.gbOrderTotal.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -465,11 +411,7 @@
         private System.Windows.Forms.RadioButton rbSalad;
         private System.Windows.Forms.RadioButton rbPizza;
         private System.Windows.Forms.RadioButton rbHamburger;
-        private System.Windows.Forms.GroupBox gbAddOnHamburger;
-        private System.Windows.Forms.CheckBox cbTomato;
-        private System.Windows.Forms.CheckBox cbOnion;
-        private System.Windows.Forms.CheckBox cbMustard;
-        private System.Windows.Forms.CheckBox cbMayo;
+        private System.Windows.Forms.GroupBox addOns;
         private System.Windows.Forms.CheckBox cbFrenchFries;
         private System.Windows.Forms.CheckBox cbKetrchup;
         private System.Windows.Forms.CheckBox cbLettuce;
