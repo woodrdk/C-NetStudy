@@ -130,6 +130,7 @@
             this.txtSide1.Name = "txtSide1";
             this.txtSide1.Size = new System.Drawing.Size(100, 20);
             this.txtSide1.TabIndex = 9;
+            this.txtSide1.TextChanged += new System.EventHandler(this.txtSide1_TextChanged);
             // 
             // txtSide2
             // 

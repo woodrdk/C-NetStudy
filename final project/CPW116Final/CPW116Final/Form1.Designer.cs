@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrimary));
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.btnAddBook = new System.Windows.Forms.Button();
             this.btnRegisterBook = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblBook = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.btnSeeReg = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +102,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -109,6 +111,7 @@
             this.addCustomerToolStripMenuItem.Name = "addCustomerToolStripMenuItem";
             this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.addCustomerToolStripMenuItem.Text = "AddCustomer";
+            this.addCustomerToolStripMenuItem.Click += new System.EventHandler(this.addCustomerToolStripMenuItem_Click);
             // 
             // addBookToolStripMenuItem
             // 
@@ -172,11 +175,22 @@
             this.lblDate.TabIndex = 9;
             this.lblDate.Text = "Date:";
             // 
+            // btnSeeReg
+            // 
+            this.btnSeeReg.Location = new System.Drawing.Point(351, 208);
+            this.btnSeeReg.Name = "btnSeeReg";
+            this.btnSeeReg.Size = new System.Drawing.Size(75, 23);
+            this.btnSeeReg.TabIndex = 10;
+            this.btnSeeReg.Text = "See Registered Books";
+            this.btnSeeReg.UseVisualStyleBackColor = true;
+            this.btnSeeReg.Click += new System.EventHandler(this.btnSeeReg_Click);
+            // 
             // frmPrimary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 310);
+            this.Controls.Add(this.btnSeeReg);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblBook);
             this.Controls.Add(this.lblName);
@@ -187,6 +201,7 @@
             this.Controls.Add(this.btnAddBook);
             this.Controls.Add(this.btnAddCustomer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrimary";
             this.Text = "Book Registration";
@@ -215,6 +230,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblBook;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Button btnSeeReg;
     }
 }
 

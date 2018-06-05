@@ -16,5 +16,18 @@ namespace CPW116Final
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtDOB.Clear();
+            txtFirst.Clear();
+            txtLast.Clear();
+            txtTitle.Clear();
+        }
     }
 }

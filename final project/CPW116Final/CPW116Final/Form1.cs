@@ -52,5 +52,16 @@ namespace CPW116Final
                 MessageBox.Show("Thank you for using the Book Registration");
             }
         }
+
+        private void addCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSeeReg_Click(object sender, EventArgs e)
+        {
+            frmRegistered fourthForm = new frmRegistered();
+            fourthForm.Show();
+        }
     }
 }
