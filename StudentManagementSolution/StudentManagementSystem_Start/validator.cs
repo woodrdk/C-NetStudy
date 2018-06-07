@@ -16,16 +16,16 @@ namespace StudentManagementSystem_Start
         /// <summary>
         /// Checks that the text box contains something besides whitespace
         /// </summary>
-        /// <param name="box">The textbox used for validation</param>
+        /// <param name="textBox">The textbox used for validation</param>
         /// <returns>Returns true if textbox contains some text, false if null or only whitespace</returns>
-        public static bool DoesTextBoxContainText(TextBox box) 
+        public static bool DoesTextBoxContainText(TextBox textBox) 
         {
-            if (TextBox == null)
+            if (textBox == null)
             {
                 return false;
             }
 
-            if (string.IsNullOrWhiteSpace(TextBox.Text))
+            if (string.IsNullOrWhiteSpace(textBox.Text))
             {
                 return false;
             }

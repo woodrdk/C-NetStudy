@@ -46,6 +46,7 @@ namespace StudentManagementSystem_Start
         // and codes the one line get set
         public DateTime DateOfBirth { get; set; }
         public string Major { get; set; }
+        
 
         public bool Register(string courseCode)
         {
@@ -58,6 +59,10 @@ namespace StudentManagementSystem_Start
             throw new NotImplementedException("Pay tuition Not implemented yet");
         }
 
+        public override string ToString()
+        {
+            return $"{StudentID} : {FirstName}";
+        }
 
 
         public string MyProperty

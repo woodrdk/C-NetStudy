@@ -39,7 +39,11 @@ namespace StudentManagementSystem_Start
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            List<Student> stuList = StudentDb.GetAllStudents();
+            foreach (Student s in stuList)
+            {
+                lstStudentRoster.Items.Add(s);
+            }
         }
     }
 }

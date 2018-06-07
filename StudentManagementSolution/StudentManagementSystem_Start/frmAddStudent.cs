@@ -70,15 +70,13 @@ namespace StudentManagementSystem_Start
         {
             bool isValid = true;
 
-            if (!DoesTextBoxContainText(txtMajor))
+            if (!validator.DoesTextBoxContainText(txtName))
             {
-                MessageBox.Show("Name must have data");
+                MessageBox.Show("Name must have data!");
                 isValid = false;
             }
-
-
-            if (!validator.DoesTextBoxContainText(txtName)) {
-                MessageBox.Show($"{currBox.Tag} is Required!");
+            if (!DoesTextBoxContainText(txtMajor))
+            {
                 isValid = false;
             }
 
@@ -88,22 +86,25 @@ namespace StudentManagementSystem_Start
         private bool AreAllTextboxesValid()
         {
             bool isValid = true;
-            
-            //loop thru every control on form
-            foreach (Control c in this.Controls)
+
+            //loop through every control on form
+            foreach (Control c in Controls)
             {
                 if (c is TextBox)
                 {
                     TextBox currBox = c as TextBox;
-                    if (currBox.ReadOnly) {
+                    if (currBox.ReadOnly)
+                    {
                         continue;
                     }
-                    if(!validator.DoesTextBoxContainText(c as TextBox))
+                    if (!validator.DoesTextBoxContainText(currBox))
                     {
+                        MessageBox.Show($"{currBox.Tag} is required!");
                         isValid = false;
                     }
                 }
             }
+            return isValid;
         }
     }
 }
