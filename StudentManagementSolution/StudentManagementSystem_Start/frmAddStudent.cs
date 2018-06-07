@@ -33,6 +33,7 @@ namespace StudentManagementSystem_Start
                 string name = txtName.Text;
                 DateTime dob = Convert.ToDateTime(txtDOB.Text);
                 string major = txtMajor.Text;
+                
 
                 // add all data to student object
                 // Method 1: populate object property by property
@@ -40,9 +41,11 @@ namespace StudentManagementSystem_Start
                 addStu.FirstName = name;
                 addStu.DateOfBirth = dob;
                 addStu.Major = major;
+                addStu.StudentID = txtStudentID.Text;
                 // database will generate SID
 
                 // method 2: pbject initialization syntax
+                
                 var addStu2 = new Student()
                 {
                     FirstName = name,
@@ -54,7 +57,10 @@ namespace StudentManagementSystem_Start
                 var addstu3 = new Student(name, dob, major);
 
                 // add student object to database
-
+                if (StudentDb.AddStudent(addStu))
+                {
+                    // after student succesfully added execute code here
+                }
                 // if added to database
 
                 // store data in Tag property to access on main form

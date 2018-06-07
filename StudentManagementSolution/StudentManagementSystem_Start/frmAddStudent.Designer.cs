@@ -35,6 +35,8 @@
             this.txtDOB = new System.Windows.Forms.TextBox();
             this.lblMajor = new System.Windows.Forms.Label();
             this.txtMajor = new System.Windows.Forms.TextBox();
+            this.lblStudentId = new System.Windows.Forms.Label();
+            this.txtStudentID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnAddStudent
@@ -97,11 +99,30 @@
             this.txtMajor.Size = new System.Drawing.Size(100, 20);
             this.txtMajor.TabIndex = 5;
             // 
+            // lblStudentId
+            // 
+            this.lblStudentId.AutoSize = true;
+            this.lblStudentId.Location = new System.Drawing.Point(82, 45);
+            this.lblStudentId.Name = "lblStudentId";
+            this.lblStudentId.Size = new System.Drawing.Size(58, 13);
+            this.lblStudentId.TabIndex = 8;
+            this.lblStudentId.Text = "Student ID";
+            // 
+            // txtStudentID
+            // 
+            this.txtStudentID.Location = new System.Drawing.Point(241, 42);
+            this.txtStudentID.Name = "txtStudentID";
+            this.txtStudentID.Size = new System.Drawing.Size(100, 20);
+            this.txtStudentID.TabIndex = 7;
+            this.txtStudentID.Tag = "Name";
+            // 
             // frmAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 434);
+            this.Controls.Add(this.lblStudentId);
+            this.Controls.Add(this.txtStudentID);
             this.Controls.Add(this.lblMajor);
             this.Controls.Add(this.txtMajor);
             this.Controls.Add(this.lblDOB);
@@ -126,5 +147,7 @@
         private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Label lblMajor;
         private System.Windows.Forms.TextBox txtMajor;
+        private System.Windows.Forms.Label lblStudentId;
+        private System.Windows.Forms.TextBox txtStudentID;
     }
 }
