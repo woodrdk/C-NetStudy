@@ -13,15 +13,15 @@ namespace TestScoreData
     public partial class frmScoreCalculator : Form
     {
 
-        List<string> Scores = new List<string>();
-
+        List<double> Scores = new List<double>();
+        List<double> ScoresSorted = new List<double>();
 
         public frmScoreCalculator()
         {
             InitializeComponent();
         }
 
-        private void frmScoreCalculator_FormClosing(object sender, FormClosingEventArgs e)
+        private void FrmScoreCalculator_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult choice = MessageBox.Show("Are you sure you want to quit? ", "Do you want to quit? ",
             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -35,53 +35,98 @@ namespace TestScoreData
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnDisplayUnsortedScores_Click(object sender, EventArgs e)
+        private void BtnDisplayUnsortedScores_Click(object sender, EventArgs e)
         {
-            frmSortedScores secondForm = new frmSortedScores();
-            secondForm.TakeThis(Scores); // passing the list
-            secondForm.Show();
-            
-            
-           
+            var message = string.Join(Environment.NewLine, Scores);
+            MessageBox.Show(message);
+
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtScore.Text))
+            if (txtScore.Text == "")
             {
                 MessageBox.Show("Please enter a Score!");
             }
+            
             else
             {
-                Scores.Add(txtScore.Text.Trim());
-            }
-            txtScore.Clear();
-            txtScore.Focus();
-         
-            txtScoreCount.Text = Scores.Count.ToString();
 
-            double total = 0;
-            for (var i = 0; i < Scores.Count; i++)
-            {
-                total += Int32.Parse(Scores[i]);
+                try
+                {
+                    var num = Convert.ToDouble(txtScore.Text.Trim());
+
+                    if (num > 0 && num < 100)
+                    {
+                        Scores.Add(num);
+                        txtScore.Clear();
+                        txtScore.Focus();
+
+                        txtScoreCount.Text = Scores.Count.ToString();
+
+                        double total = 0;
+                        for (var i = 0; i < Scores.Count; i++)
+                        {
+                            total += (Scores[i]);
+                        }
+                        txtScoreTotal.Text = total.ToString();
+                        txtAverage.Text = (total / Scores.Count).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Enter a number between 0 and 100");
+                        txtScore.Text = "";
+                    }
+                }
+                catch(FormatException)
+                {
+                    MessageBox.Show("You Did Not Enter A Number");
+                }
             }
-            txtScoreTotal.Text = total.ToString();
-            txtAverage.Text = (total / Scores.Count).ToString();
         }
 
-        private void btnClearScores_Click(object sender, EventArgs e)
+        private void BtnClearScores_Click(object sender, EventArgs e)
         {
             Scores.Clear();
+            txtAverage.Text = "";
+            txtScore.Text = "";
+            txtScoreCount.Text = "";
+            txtScoreTotal.Text = "";
+
+        }
+
+        private void BtnDisplayScores_Click(object sender, EventArgs e)
+        {
+            ScoresSorted = new List<double>(Scores);
+            ScoresSorted.Sort();
+            var messageSort = string.Join(Environment.NewLine, ScoresSorted);
+            MessageBox.Show(messageSort);
+        }
+
+        private void TxtScore_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtScore.Text, "  ^ [0-9]"))
+            {
+                txtScore.Text = "";
+            }
+        }
+
+        private void TxtScore_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

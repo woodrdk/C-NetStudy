@@ -89,6 +89,7 @@
             this.txtScore.Name = "txtScore";
             this.txtScore.Size = new System.Drawing.Size(53, 20);
             this.txtScore.TabIndex = 4;
+            this.txtScore.TextChanged += new System.EventHandler(this.TxtScore_TextChanged);
             // 
             // txtScoreTotal
             // 
@@ -122,7 +123,7 @@
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnDisplayScores
             // 
@@ -132,6 +133,7 @@
             this.btnDisplayScores.TabIndex = 9;
             this.btnDisplayScores.Text = "Display Sorted Scores";
             this.btnDisplayScores.UseVisualStyleBackColor = true;
+            this.btnDisplayScores.Click += new System.EventHandler(this.BtnDisplayScores_Click);
             // 
             // btnClearScores
             // 
@@ -141,7 +143,7 @@
             this.btnClearScores.TabIndex = 10;
             this.btnClearScores.Text = "Clear scores";
             this.btnClearScores.UseVisualStyleBackColor = true;
-            this.btnClearScores.Click += new System.EventHandler(this.btnClearScores_Click);
+            this.btnClearScores.Click += new System.EventHandler(this.BtnClearScores_Click);
             // 
             // btnExit
             // 
@@ -151,7 +153,7 @@
             this.btnExit.TabIndex = 11;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // btnDisplayUnsortedScores
             // 
@@ -161,7 +163,7 @@
             this.btnDisplayUnsortedScores.TabIndex = 12;
             this.btnDisplayUnsortedScores.Text = "Display Unsorted Scores";
             this.btnDisplayUnsortedScores.UseVisualStyleBackColor = true;
-            this.btnDisplayUnsortedScores.Click += new System.EventHandler(this.btnDisplayUnsortedScores_Click);
+            this.btnDisplayUnsortedScores.Click += new System.EventHandler(this.BtnDisplayUnsortedScores_Click);
             // 
             // menuStrip1
             // 
@@ -184,9 +186,9 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // frmScoreCalculator
             // 
@@ -211,7 +213,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmScoreCalculator";
             this.Text = "Score Calculator";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmScoreCalculator_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmScoreCalculator_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
