@@ -59,16 +59,20 @@ namespace StudentManagementSystem_Start
                 // add student object to database
                 if (StudentDb.AddStudent(addStu))
                 {
-                    // after student succesfully added execute code here
+                    MessageBox.Show("Student Added");
+                    // ignore passing the name back to the main form
+                    this.Tag = name;
+                    this.StudentName = name;
+                    this.stu = name;
+
+                    DialogResult = DialogResult.OK;
+
                 }
-                // if added to database
+                else {
+                    MessageBox.Show("Stu cannot be added at this time");
+                }
+            
 
-                // store data in Tag property to access on main form
-                this.Tag = name;
-                this.StudentName = name;
-                this.stu = name;
-
-                this.DialogResult = DialogResult.OK;
             }
         }
 

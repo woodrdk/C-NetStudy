@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudentManagementSystem_Start
 {
@@ -78,8 +79,30 @@ namespace StudentManagementSystem_Start
 
         public static bool DeleteStudent(string sid)
         {
-            throw new NotImplementedException();
-           
+            SqlConnection con = GetSQLConnection();
+
+            string query = "DELETE FROM Students" +
+                " WHERE SID = @sid";
+
+            SqlCommand delCmd = new SqlCommand(query, con);
+            delCmd.Parameters.AddWithValue("@sid", sid);
+            
+            con.Open();
+
+            int rowsAffected = delCmd.ExecuteNonQuery();
+            con.Close();
+
+            if (rowsAffected == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+            
+
         }
 
         public static bool DeleteStudent(Student s)
@@ -90,30 +113,53 @@ namespace StudentManagementSystem_Start
 
         private static SqlConnection GetSQLConnection()
         {
-            return new SqlConnection(GetConnectionString());
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = GetConnectionString();
+            return con;
         }
 
         public static bool AddStudent(Student s)
         {
             SqlConnection con = GetSQLConnection();
-            string query = "insert query goes here";
+            string query = @"INSERT INTO Students
+            (SID, FirstName, DateOfBirth, Major)
+            Values
+            (@Sid, @FirstName, @DateOfBirth, @Major)";
             SqlCommand addCmd = new SqlCommand(query, con);
+            
             // add parameters for query here.....
+            addCmd.Parameters.AddWithValue("@Sid", s.StudentID);
+            addCmd.Parameters.AddWithValue("@FirstName", s.FirstName);
+            addCmd.Parameters.AddWithValue("@DateOfBirth", s.DateOfBirth);
+            addCmd.Parameters.AddWithValue("@Major", s.Major);
             
             // open connection
-            con.Open();
-            
-            // executed query
-            int rows = addCmd.ExecuteNonQuery();
+            try
+            {
+                con.Open();
 
-            // do something with results
-            if (rows == 1)
-                return true;
-            else
+                // executed query
+                int rows = addCmd.ExecuteNonQuery();
+
+                // do something with results
+                if (rows == 1)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Database error\n{ex.Message}");
                 return false;
+            }
+            finally
+            {
+                // close connection no matter if query worked or not
+                con.Close();
+                // or con.dispose()
+            }
+         
 
-            // close connection ??
-            
         }
 
         public static bool UpdateStudent(Student s)
