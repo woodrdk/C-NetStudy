@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B91DB8B2-92B6-44DD-B280-BE5ECC9056FC}</ProjectGuid>
+    <ProjectGuid>{6781507A-92D4-4396-A6A7-62382E2E16B2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TestScoreData</RootNamespace>
-    <AssemblyName>TestScoreData</AssemblyName>
+    <RootNamespace>Lunch_Order_Proper</RootNamespace>
+    <AssemblyName>Lunch Order Proper</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
