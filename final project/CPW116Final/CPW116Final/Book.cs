@@ -8,11 +8,7 @@ namespace CPW116Final
 {
     class Book
     {
-        //fully implemented property
-        //private field, with public getter/setter
-        private string _studentID;
-        private string _firstName;
-
+     
         public Book()
         {
             //DEFAULT NO-ARGS CONSTRUCTOR
@@ -29,10 +25,20 @@ namespace CPW116Final
         }
 
 
-
-        public double ISBN { get; private set; }
-        public double Price { get; private set; }
-        public string title { get; private set; }
+        public string title {
+            get { return title; }
+            set { title = value; }
+        }
+        public double ISBN
+        {
+            get { return ISBN; }
+            set { ISBN = value; }
+        }
+        public double Price {
+            get { return Price;}
+            set { Price = value; }
+        }
+ 
 
         public override string ToString()
         {

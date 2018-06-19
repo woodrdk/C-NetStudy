@@ -29,5 +29,37 @@ namespace CPW116Final
             txtLast.Clear();
             txtTitle.Clear();
         }
+
+        private void btnAddNewCustomer_Click(object sender, EventArgs e)
+        {
+            string firstName = txtFirst.Text;
+            string lastName = txtLast.Text;
+            DateTime dob = Convert.ToDateTime(txtDOB.Text);
+            string title = txtTitle.Text;
+
+            //add all data to student object
+            //METHOD 1: POPULATE OBJECT PROPERTY BY PROPERTY
+            var addBook();
+            addBook.FirstName = firstName;
+            addBook.DateOfBirth = dob;
+            addBook.Price;
+            addBook.lastName = lastName;
+            ////database will generate SID
+            ////METHOD 2: Object Initialization Syntax
+ 
+            //add student object to database
+            if (StudentDB.AddStudent(addStu))
+            {
+                MessageBox.Show("Student Added!");
+
+                //ignore passing the name back to the 
+                //main form
+                this.Tag = name;
+                this.StudentName = name;
+                this.stu = name;
+
+                DialogResult = DialogResult.OK;
+            }
+        }
     }
 }

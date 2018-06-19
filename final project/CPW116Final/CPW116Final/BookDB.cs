@@ -43,9 +43,9 @@ namespace CPW116Final
                 //convert row to student object
                 Book bk = new Book
                 {
-                    ISBN = rdr["ISBN"].ToString(),
-                    Price = (string)rdr["Price"],
-                    Title = Convert.ToDateTime(rdr["Title"]),
+                    ISBN = Convert.ToDouble(rdr["ISBN"]),
+                    Price =  Convert.ToDouble(rdr["Price"]),
+                    title = rdr["Title"].ToString(),
          
                 };
                 Books.Add(bk);
