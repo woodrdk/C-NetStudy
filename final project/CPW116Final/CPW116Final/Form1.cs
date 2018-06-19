@@ -29,6 +29,11 @@ namespace CPW116Final
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            addCustomer();
+        }
+
+        private void addCustomer()
+        {
             frmAddCustomer secondForm = new frmAddCustomer();
             secondForm.ShowDialog();
             populateNameBox();
@@ -36,6 +41,11 @@ namespace CPW116Final
         }
 
         private void btnAddBook_Click(object sender, EventArgs e)
+        {
+            addABoook();
+        }
+
+        private void addABoook()
         {
             frmAddBook thirdForm = new frmAddBook();
             thirdForm.ShowDialog();
@@ -59,7 +69,7 @@ namespace CPW116Final
 
         private void addCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            addCustomer();
         }
 
         private void btnSeeReg_Click(object sender, EventArgs e)
@@ -76,9 +86,14 @@ namespace CPW116Final
 
         private void btnRegisterBook_Click(object sender, EventArgs e)
         {
+            regTheBook();
+        }
+
+        private void regTheBook()
+        {
             Customer customerObject = (Customer)cbName.SelectedItem;
             Book bookIsbn = (Book)cbBook.SelectedItem;
-            DateTime regDate = dateTimePicker1.Value; 
+            DateTime regDate = dateTimePicker1.Value;
 
             //add all data to student object
             //METHOD 1: POPULATE OBJECT PROPERTY BY PROPERTY
@@ -129,6 +144,16 @@ namespace CPW116Final
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void addBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addABoook();
+        }
+
+        private void registerBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            regTheBook();
         }
     }
 }

@@ -28,14 +28,43 @@ namespace CPW116Final
             txtFirst.Clear();
             txtLast.Clear();
             txtTitle.Clear();
+
         }
 
         private void btnAddNewCustomer_Click(object sender, EventArgs e)
         {
-            string firstName = txtFirst.Text;
-            string lastName = txtLast.Text;
+            var namefirst = false;
+            string firstName = null;
+            if (txtFirst.Text == "")
+            {
+                namefirst = false;
+            }
+            else {
+                firstName = txtFirst.Text;
+            }
+
+            var namelast = false;
+            string lastName = null;
+            if (txtLast.Text == "")
+            {
+                namelast = false;
+            }
+            else {
+                lastName = txtLast.Text;
+            }
+
+            var titleValid = false;
+            string title = null;
+            if (txtLast.Text == "")
+            {
+                titleValid = false;
+            }
+            else
+            {
+                title = txtTitle.Text;
+            }
+
             DateTime dob = Convert.ToDateTime(txtDOB.Text);
-            string title = txtTitle.Text;
 
             //add all data to student object
             //METHOD 1: POPULATE OBJECT PROPERTY BY PROPERTY
@@ -63,6 +92,7 @@ namespace CPW116Final
             else
             {
                 MessageBox.Show("Customer cannot be added at this time!");
+                
             }
             
         }

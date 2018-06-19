@@ -9,14 +9,14 @@ using System.Windows.Forms;
 namespace CPW116Final
 {
     class BookRegistrationDB
-    {
+    {   
         private static string GetConnectionString()
         {
             return "Data Source=localhost;Initial Catalog=BookRegistration;Integrated Security=True";
         }
 
 
-
+    
         public static List<Registration> GetRegistered()
         {
 

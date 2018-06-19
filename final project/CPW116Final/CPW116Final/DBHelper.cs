@@ -8,5 +8,9 @@ namespace CPW116Final
 {
     class DBHelper
     {
+        private static string GetConnectionString()
+        {
+            return "Data Source=localhost;Initial Catalog=BookRegistration;Integrated Security=True";
+        }
     }
 }

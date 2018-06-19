@@ -119,12 +119,14 @@
             this.addBookToolStripMenuItem.Name = "addBookToolStripMenuItem";
             this.addBookToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.addBookToolStripMenuItem.Text = "AddBook";
+            this.addBookToolStripMenuItem.Click += new System.EventHandler(this.addBookToolStripMenuItem_Click);
             // 
             // registerBookToolStripMenuItem
             // 
             this.registerBookToolStripMenuItem.Name = "registerBookToolStripMenuItem";
             this.registerBookToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.registerBookToolStripMenuItem.Text = "RegisterBook";
+            this.registerBookToolStripMenuItem.Click += new System.EventHandler(this.registerBookToolStripMenuItem_Click);
             // 
             // dateTimePicker1
             // 
