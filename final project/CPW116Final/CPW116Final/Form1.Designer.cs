@@ -206,6 +206,7 @@
             this.Name = "frmPrimary";
             this.Text = "Book Registration";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrimary_FormClosing);
+            this.Load += new System.EventHandler(this.frmPrimary_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

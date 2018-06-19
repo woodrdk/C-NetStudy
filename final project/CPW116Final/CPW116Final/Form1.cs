@@ -63,5 +63,10 @@ namespace CPW116Final
             frmRegistered fourthForm = new frmRegistered();
             fourthForm.Show();
         }
+
+        private void frmPrimary_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
