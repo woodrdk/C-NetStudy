@@ -10,19 +10,11 @@ namespace CPW116Final
 {
     class BookRegistrationDB
     {   
-        private static string GetConnectionString()
-        {
-            return "Data Source=localhost;Initial Catalog=BookRegistration;Integrated Security=True";
-        }
-
-
-    
+  
         public static List<Registration> GetRegistered()
         {
-
             //STEP 1: Establish Connection to server
-            var dbCon = new System.Data.SqlClient.SqlConnection();
-            dbCon.ConnectionString = GetConnectionString();
+            var dbCon = DBHelper.GetSQLConnection();
 
             //STEP 2: Create command object with sql query
             string query = @"SELECT CustomerID
@@ -57,19 +49,10 @@ namespace CPW116Final
 
             return Registered;
         }
-        private static SqlConnection GetSqlConnection()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = GetConnectionString();
-            return con;
-
-            //return new SqlConnection(GetConnectionString());
-        }
 
         public static bool addReg(Registration s)
         {
-
-            SqlConnection con = GetSqlConnection();
+            SqlConnection con = DBHelper.GetSQLConnection();
 
             string query = @"INSERT INTO Registration
                     (CustomerId, ISBN, RegDate)
