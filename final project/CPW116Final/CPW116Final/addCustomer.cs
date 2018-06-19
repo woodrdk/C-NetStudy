@@ -33,13 +33,20 @@ namespace CPW116Final
 
         private void btnAddNewCustomer_Click(object sender, EventArgs e)
         {
+            addded();
+
+        }
+
+        private void addded()
+        {
             var namefirst = false;
             string firstName = null;
             if (txtFirst.Text == "")
             {
                 namefirst = false;
             }
-            else {
+            else
+            {
                 firstName = txtFirst.Text;
             }
 
@@ -49,7 +56,8 @@ namespace CPW116Final
             {
                 namelast = false;
             }
-            else {
+            else
+            {
                 lastName = txtLast.Text;
             }
 
@@ -79,7 +87,7 @@ namespace CPW116Final
             txtLast.Clear();
             txtTitle.Clear();
 
-            
+
 
             if (CustomerDB.AddCust(addCustomer))
             {
@@ -92,13 +100,18 @@ namespace CPW116Final
             else
             {
                 MessageBox.Show("Customer cannot be added at this time!");
-                
+
             }
-            
         }
+
         private void frmAddCustomer_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void addNewCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addded();
         }
     }
     

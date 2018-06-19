@@ -103,7 +103,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -182,9 +182,9 @@
             // 
             // btnSeeReg
             // 
-            this.btnSeeReg.Location = new System.Drawing.Point(351, 208);
+            this.btnSeeReg.Location = new System.Drawing.Point(308, 218);
             this.btnSeeReg.Name = "btnSeeReg";
-            this.btnSeeReg.Size = new System.Drawing.Size(75, 23);
+            this.btnSeeReg.Size = new System.Drawing.Size(140, 23);
             this.btnSeeReg.TabIndex = 10;
             this.btnSeeReg.Text = "See Registered Books";
             this.btnSeeReg.UseVisualStyleBackColor = true;

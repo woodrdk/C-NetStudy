@@ -54,6 +54,7 @@
     <Compile Include="Book.cs" />
     <Compile Include="BookDB.cs" />
     <Compile Include="BookRegistrationDB.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerDB.cs" />
     <Compile Include="DBHelper.cs" />
