@@ -39,8 +39,8 @@
             this.addBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbName = new System.Windows.Forms.ComboBox();
+            this.cbBook = new System.Windows.Forms.ComboBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblBook = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
@@ -76,6 +76,7 @@
             this.btnRegisterBook.TabIndex = 2;
             this.btnRegisterBook.Text = "Register Book";
             this.btnRegisterBook.UseVisualStyleBackColor = true;
+            this.btnRegisterBook.Click += new System.EventHandler(this.btnRegisterBook_Click);
             // 
             // menuStrip1
             // 
@@ -131,22 +132,24 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // comboBox1
+            // cbName
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(72, 50);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbName.FormattingEnabled = true;
+            this.cbName.Location = new System.Drawing.Point(72, 50);
+            this.cbName.Name = "cbName";
+            this.cbName.Size = new System.Drawing.Size(121, 21);
+            this.cbName.TabIndex = 5;
+            this.cbName.SelectedIndexChanged += new System.EventHandler(this.cbName_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cbBook
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(72, 97);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cbBook.FormattingEnabled = true;
+            this.cbBook.Location = new System.Drawing.Point(72, 97);
+            this.cbBook.Name = "cbBook";
+            this.cbBook.Size = new System.Drawing.Size(121, 21);
+            this.cbBook.TabIndex = 6;
             // 
             // lblName
             // 
@@ -194,8 +197,8 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblBook);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbBook);
+            this.Controls.Add(this.cbName);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnRegisterBook);
             this.Controls.Add(this.btnAddBook);
@@ -226,8 +229,8 @@
         private System.Windows.Forms.ToolStripMenuItem addBookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registerBookToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbName;
+        private System.Windows.Forms.ComboBox cbBook;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblBook;
         private System.Windows.Forms.Label lblDate;

@@ -30,13 +30,17 @@ namespace CPW116Final
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             frmAddCustomer secondForm = new frmAddCustomer();
-            secondForm.Show();
+            secondForm.ShowDialog();
+            populateNameBox();
+            populateBookBox();
         }
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
             frmAddBook thirdForm = new frmAddBook();
-            thirdForm.Show();
+            thirdForm.ShowDialog();
+            populateNameBox();
+            populateBookBox();
         }
 
         private void frmPrimary_FormClosing(object sender, FormClosingEventArgs e)
@@ -65,6 +69,64 @@ namespace CPW116Final
         }
 
         private void frmPrimary_Load(object sender, EventArgs e)
+        {
+            populateNameBox();
+            populateBookBox();
+        }
+
+        private void btnRegisterBook_Click(object sender, EventArgs e)
+        {
+            Customer customerObject = (Customer)cbName.SelectedItem;
+            Book bookIsbn = (Book)cbBook.SelectedItem;
+            DateTime regDate = dateTimePicker1.Value; 
+
+            //add all data to student object
+            //METHOD 1: POPULATE OBJECT PROPERTY BY PROPERTY
+            var Register = new Registration();
+            Register.CustomerId = customerObject.CustomerId;
+            Register.ISBN = bookIsbn.ISBN;
+            Register.RegDate = regDate;
+
+
+            if (BookRegistrationDB.addReg(Register))
+            {
+                MessageBox.Show("Registered!");
+
+                this.Tag = customerObject;
+
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Cannot register at this time!");
+            }
+        }
+
+        private void cbName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void populateNameBox() {
+            List<Customer> custList = CustomerDB.GetAllCustomers();
+            cbName.Items.Clear();
+            foreach (Customer s in custList)
+            {
+                cbName.Items.Add(s);
+            }
+        }
+
+        public void populateBookBox()
+        {
+            List<Book> bookList = BookDB.GetAllBooks();
+            cbBook.Items.Clear();
+            foreach (Book s in bookList)
+            {
+                cbBook.Items.Add(s);
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }

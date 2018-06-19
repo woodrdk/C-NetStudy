@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CPW116Final
 {
@@ -11,9 +12,10 @@ namespace CPW116Final
     {
         private static string GetConnectionString()
         {
-            return "Data Source=localhost;Initial Catalog=SMS;Integrated Security=True";
+            return "Data Source=localhost;Initial Catalog=BookRegistration;Integrated Security=True";
         }
-
+    
+        
         public static List<Book> GetAllBooks()
         {
        
@@ -24,7 +26,8 @@ namespace CPW116Final
             //STEP 2: Create command object with sql query
             string query = @"SELECT ISBN
 	                        , Price
-	                        , Title";
+	                        , Title
+                            FROM Book";
             //SqlCommand selCmd = new SqlCommand();
             //selCmd.CommandText = query;
             //selCmd.Connection = dbCon;
@@ -43,19 +46,74 @@ namespace CPW116Final
                 //convert row to student object
                 Book bk = new Book
                 {
-                    ISBN = Convert.ToDouble(rdr["ISBN"]),
+                    ISBN = rdr["ISBN"].ToString(),
                     Price =  Convert.ToDouble(rdr["Price"]),
-                    title = rdr["Title"].ToString(),
-         
+                    Title = rdr["Title"].ToString()
                 };
                 Books.Add(bk);
             }
 
             //STEP 6: Close Connection
             dbCon.Close();
-            //dbCon.Dispose(); //(calls close internally)
 
             return Books;
+        }
+
+        private static SqlConnection GetSqlConnection()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = GetConnectionString();
+            return con;
+
+            //return new SqlConnection(GetConnectionString());
+        }
+
+        public static bool AddBookNow(Book s)
+        {
+
+            SqlConnection con = GetSqlConnection();
+
+            string query = @"INSERT INTO Book
+                    (ISBN, Price, Title)
+                VALUES
+                     (@ISBN, @Price, @Title)";
+
+            SqlCommand addCmd =
+                new SqlCommand(query, con);
+            //add parameters for query here...
+
+            addCmd.Parameters
+                .AddWithValue("@ISBN", s.ISBN);
+            addCmd.Parameters
+               .AddWithValue("@Price", s.Price);
+            addCmd.Parameters
+                .AddWithValue("@Title", s.Title);
+
+            //open connection
+            try
+            {
+                con.Open();
+
+                //executed query
+                int rows = addCmd.ExecuteNonQuery();
+
+                //do something with results
+                if (rows == 1)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Database error\n{ex.Message}");
+                return false;
+            }
+            finally
+            {
+
+                con.Close();
+            }
+
         }
     }
 }

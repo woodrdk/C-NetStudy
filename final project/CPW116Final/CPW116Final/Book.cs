@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace CPW116Final
 {
-    class Book
+    public class Book
     {
-     
+        private string isbn;
+        private double price;
+        private string title;
+
         public Book()
         {
             //DEFAULT NO-ARGS CONSTRUCTOR
@@ -16,33 +19,33 @@ namespace CPW116Final
             //NO OTHER CONSTRUCTORS ARE PRESENT
         }
 
-        public Book(double ISBN, double Price,
+        public Book(string isbn, double price,
                                 string title)
         {
-            this.ISBN = ISBN;
-            this.Price = Price;
-            this.title = title;
+            this.ISBN = isbn;
+            this.Price = price;
+            this.Title = title;
         }
 
 
-        public string title {
+        public string Title {
             get { return title; }
             set { title = value; }
         }
-        public double ISBN
+        public string ISBN
         {
-            get { return ISBN; }
-            set { ISBN = value; }
+            get { return isbn; }
+            set { isbn = value; }
         }
         public double Price {
-            get { return Price;}
-            set { Price = value; }
+            get { return price;}
+            set { price = value; }
         }
  
 
         public override string ToString()
         {
-            return $"{ISBN} : {Price} : {title}";
+            return $" {title}";
         }
     }
 }

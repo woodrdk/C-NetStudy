@@ -183,6 +183,7 @@
             this.Name = "frmAddCustomer";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Add Customer";
+            this.Load += new System.EventHandler(this.frmAddCustomer_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

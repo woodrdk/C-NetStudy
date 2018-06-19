@@ -39,27 +39,40 @@ namespace CPW116Final
 
             //add all data to student object
             //METHOD 1: POPULATE OBJECT PROPERTY BY PROPERTY
-            var addBook();
-            addBook.FirstName = firstName;
-            addBook.DateOfBirth = dob;
-            addBook.Price;
-            addBook.lastName = lastName;
-            ////database will generate SID
-            ////METHOD 2: Object Initialization Syntax
- 
-            //add student object to database
-            if (StudentDB.AddStudent(addStu))
-            {
-                MessageBox.Show("Student Added!");
+            var addCustomer = new Customer();
+            addCustomer.FirstName = firstName;
+            addCustomer.LastName = lastName;
+            addCustomer.DateOfBirth = dob;
+            addCustomer.Title = title;
 
-                //ignore passing the name back to the 
-                //main form
-                this.Tag = name;
-                this.StudentName = name;
-                this.stu = name;
+            txtDOB.Clear();
+            txtFirst.Clear();
+            txtLast.Clear();
+            txtTitle.Clear();
+
+            
+
+            if (CustomerDB.AddCust(addCustomer))
+            {
+                MessageBox.Show("Customer Added!");
+
+                this.Tag = firstName;
 
                 DialogResult = DialogResult.OK;
             }
+            else
+            {
+                MessageBox.Show("Customer cannot be added at this time!");
+            }
+            
+        }
+        private void frmAddCustomer_Load(object sender, EventArgs e)
+        {
+
         }
     }
+    
+   
+        
 }
+
